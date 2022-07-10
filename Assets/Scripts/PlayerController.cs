@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     Vector2 movement;
     Rigidbody2D rigidBody;
+    Unlockable unlockable;
 
     private void Awake() {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -19,11 +20,29 @@ public class PlayerController : MonoBehaviour
         rigidBody.velocity = movement * speed;
     }
 
-    private void OnMovement(InputValue value) {
-        movement = value.Get<Vector2>();
+    public void OnMovement(InputAction.CallbackContext context) {
+        movement = context.ReadValue<Vector2>();
     }
 
-    private void OnInteract() {
+    public void OnInteract(InputAction.CallbackContext context) {
         Debug.Log("interacted!");
+        if (unlockable != null)
+        {
+            unlockable.ToggleUnlockMenu();
+        }
+    }
+
+    //public void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    Unlockable temp = collision.gameObject.GetComponent<Unlockable>();
+    //    if(temp != null)
+    //    {
+    //        unlockable = temp;
+    //    }
+    //}
+
+    public void SetUnlockable(Unlockable u)
+    {
+        unlockable = u;
     }
 }
