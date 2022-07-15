@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+
+    //5 MAX
     public int health;
     public int numOfHearts;
-    public bool shouldDisplay;
 
     public Image[] hearts;
     public Sprite fullHeart;
@@ -15,10 +16,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if(shouldDisplay) { }
         for(int i = 0; i < hearts.Length; i++)
         {
-
             //safety dont go over max health
             if(health > numOfHearts)
             {
@@ -41,4 +40,5 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
+
 }

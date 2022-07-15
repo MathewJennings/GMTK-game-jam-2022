@@ -20,4 +20,9 @@ public class EnemyAI : MonoBehaviour {
         Vector2 direction = heading / distance;
         rigidBody.velocity = direction * speed;
     }
+
+    public void SetSpeed(float s)
+    {
+        speed = s;
+    }
 }

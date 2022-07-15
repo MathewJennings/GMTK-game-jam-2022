@@ -9,9 +9,14 @@ public class PlayerController : MonoBehaviour {
 
     Vector2 movement;
     Rigidbody2D rigidBody;
+    private int health;
+    public int MAX_HEALTH = 5;
+    public PlayerHealth playerHealth;
 
     private void Awake () {
         rigidBody = GetComponent<Rigidbody2D> ();
+        SetHealth(MAX_HEALTH);
+        playerHealth.numOfHearts = MAX_HEALTH;
     }
 
     private void FixedUpdate () {
@@ -24,5 +29,23 @@ public class PlayerController : MonoBehaviour {
 
     public void OnInteract (InputAction.CallbackContext context) {
         Debug.Log("Interacted!");
+    }
+
+    public void TakeDamage()
+    {
+        SetHealth(--health);
+    }
+    public void SetHealth(int h)
+    {
+        health = h;
+        playerHealth.health = health;
+        if(health == 0) {
+            Die();
+        }
+    }
+    public void Die()
+    {
+        speed = 0;
+        GetComponent<Transform>().Rotate(0.0f, 0.0f, 90.0f, Space.Self);
     }
 }
