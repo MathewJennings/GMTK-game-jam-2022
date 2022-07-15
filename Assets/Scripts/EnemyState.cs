@@ -36,6 +36,7 @@ public class EnemyState : MonoBehaviour
     }
     public void TakeDamage()
     {
+        Debug.Log("Take Damage");
         SetHealth(--health);
     }
     public void SetHealth(int h)
@@ -50,8 +51,6 @@ public class EnemyState : MonoBehaviour
 
     public void Die()
     {
-
-        
         enemyAI.SetSpeed(0);
         Destroy(this.gameObject, 1);
         //TODO this should eventually be put on an enemy manager to check if all enemies are defeated
