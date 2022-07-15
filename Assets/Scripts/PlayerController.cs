@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour {
 
-    [SerializeField] float speed;
-
+    [SerializeField] float initialSpeed;
+    float currentSpeed;
     Vector2 movement;
     Rigidbody2D rigidBody;
     private int health;
@@ -15,12 +15,32 @@ public class PlayerController : MonoBehaviour {
 
     private void Awake () {
         rigidBody = GetComponent<Rigidbody2D> ();
+        GameManager.OnGameStateChange += RestartTrigger;
+        Restart();
+    }
+    private void OnDestroy()
+    {
+        GameManager.OnGameStateChange -= RestartTrigger;
+    }
+
+
+    private void RestartTrigger(GameState gs)
+    {
+        if(gs == GameState.SetupGame)
+        {
+            Restart();
+        }
+    }
+    private void Restart()
+    {
         SetHealth(MAX_HEALTH);
         playerHealth.numOfHearts = MAX_HEALTH;
+        currentSpeed = initialSpeed;
+        GetComponent<Transform>().rotation = Quaternion.Euler(0.0f, 0.0f, 0);
     }
 
     private void FixedUpdate () {
-        rigidBody.velocity = movement * speed;
+        rigidBody.velocity = movement * currentSpeed;
     }
 
     public void OnMovement (InputAction.CallbackContext context) {
@@ -33,19 +53,22 @@ public class PlayerController : MonoBehaviour {
 
     public void TakeDamage()
     {
+        Debug.Log("TakeDamage");
         SetHealth(--health);
     }
     public void SetHealth(int h)
     {
         health = h;
         playerHealth.health = health;
-        if(health == 0) {
+        if(health <= 0) {
             Die();
         }
     }
     public void Die()
     {
-        speed = 0;
+        currentSpeed = 0;
         GetComponent<Transform>().Rotate(0.0f, 0.0f, 90.0f, Space.Self);
+        //await System.Threading.Tasks.Task.Delay(1000);
+        GameManager.Instance.UpdateGameState(GameState.Defeat);
     }
 }
