@@ -65,7 +65,28 @@ First sprint
     DONE: success state (text that says you win + reset button) (Franklin)
     DONE: dice that you can roll
     	Switch to mouse interaction (Mat)
-	Animations (Franklin)
-    faces that trigger differnt actions
+	DONE: Animations (Franklin)
+    DONE: faces that trigger differnt actions
         single sword die, literally number 1-6
+
+    NPE bug on dice check
+    dice skin
+    change swipe angle on 6 to 179
+    make the swipe animation follow the player
+
+Second sprint:
+    Reward Menu: second die
+        menu screens
+        drag and drop
+        Second die, all 360 1 damage sides
+    Dice manager
+        Dice management that works with multiple dice
+        use existing dice drag manager
+    Door to open, walk through trigger second level
+    
+    room manager
+        list of enemies and spawn positions
+        second room twice as big, 2 enemies
+        add endgame menu
+        update reward/defeat menus
     
