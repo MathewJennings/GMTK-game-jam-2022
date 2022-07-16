@@ -50,13 +50,6 @@ public class PlayerController : MonoBehaviour {
 
     public void OnInteract (InputAction.CallbackContext context) {
         Debug.Log("Interacted!");
-        StartCoroutine(AttackCo());
-    }
-
-    private IEnumerator AttackCo()
-    {
-        playerAttackController.Swipe();
-        yield return null;
     }
 
     public void TakeDamage()

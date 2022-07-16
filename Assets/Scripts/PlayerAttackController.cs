@@ -20,13 +20,8 @@ public class PlayerAttackController : MonoBehaviour
     {
     }
 
-    public void Swipe()
+    public void Swipe(float swipeAngle, float swipeSize, int swipeDamage)
     {
-        // These would be the properties from the die
-        var swipeAngle = Random.Range(60.0f, 180.0f);
-        var swipeSize = Random.Range(.5f, 2.0f);
-        var swipeDamage = 1;
-
         Debug.Log("Attack angle: " + swipeAngle + " Swipe Size: " + swipeSize);
         SwordSwipe.Create(prefab, swipeAngle, swipeSize, .4f, swipeDamage, myDie, playerPosition);
     }
