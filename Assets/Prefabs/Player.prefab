@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7770168242400850407}
   - component: {fileID: 659292642}
   - component: {fileID: 659292641}
+  - component: {fileID: 3375250955215879082}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -211,7 +212,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc8fe5aaa6313345b28e4550b37a26d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  initialSpeed: 5
+  MAX_HEALTH: 5
+  playerHealth: {fileID: 3375250955215879082}
 --- !u!114 &659292642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,3 +253,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3375250955215879082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7770168242400850402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2331b88c442ee244823b3b273370f7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  numOfHearts: 5
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fullHeart: {fileID: 941075483, guid: d41b07e68da15c5428632c2f1ffb0732, type: 3}
+  emptyHeart: {fileID: -2090882880, guid: d41b07e68da15c5428632c2f1ffb0732, type: 3}

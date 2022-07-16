@@ -56,15 +56,16 @@ UI
         yay shiney new dice in middle. left, currently equipt dice, right unequipt dice, when you select 3 or fewer, then you close the menu and procceed to the next level
 
 First sprint
-    Create the room (Mat)
-    Player + movement controller (Mat)
-    Single melee enemy + AI (walk to player)
-    heath system (Franklin)
-        player and enemy
+    DONE: Create the room (Mat)
+    DONE: Player + movement controller (Mat)
+    DONE: Single melee enemy + AI (walk to player)
+    DONE: heath system (Franklin) (player and enemy)
     
-    failure state (text that says you lose + reset button) (Franklin)
-    success state (text that says you win + reset button) (Franklin)
-    dice that you can roll
+    DONE: failure state (text that says you lose + reset button) (Franklin)
+    DONE: success state (text that says you win + reset button) (Franklin)
+    DONE: dice that you can roll
+    	Switch to mouse interaction (Mat)
+	Animations (Franklin)
     faces that trigger differnt actions
         single sword die, literally number 1-6
     

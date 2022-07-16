@@ -545,7 +545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d8f64d64104d044aad10108d9da2c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  initialSpeed: 1
 --- !u!114 &1357226402732135299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,8 +571,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealthBar: {fileID: 3986600990261692284}
-  enemyMaxHealth: 2
-  enemyCurrentHealth: 2
+  enemyMaxHealth: 5
+  enemyAI: {fileID: 6063782145614063775}
 --- !u!1 &8877844265896023820
 GameObject:
   m_ObjectHideFlags: 0
