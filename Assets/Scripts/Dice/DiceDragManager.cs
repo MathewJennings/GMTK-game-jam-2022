@@ -17,6 +17,8 @@ public class DiceDragManager : MonoBehaviour {
     private InputAction mouseClick;
     [SerializeField]
     private int mouseDragPhysicsSpeed;
+    [SerializeField]
+    private float diceStopRollMaxVelocity;
 
     private static Vector3 UP = -Vector3.forward;
 
@@ -97,7 +99,7 @@ public class DiceDragManager : MonoBehaviour {
     private void tryResolveDiceRoll () {
         if (diceThatIsResolving != null) {
             Vector3 diceVelocity = diceThatIsResolving.GetComponent<Rigidbody> ().velocity;
-            if (diceVelocity.Equals (Vector3.zero)) {
+            if (diceVelocity.magnitude < diceStopRollMaxVelocity) {
                 if (diceRollCompleted != null) {
                     diceRollCompleted (diceThatIsResolving);
                 }
