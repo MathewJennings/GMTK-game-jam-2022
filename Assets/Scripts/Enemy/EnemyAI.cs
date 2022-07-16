@@ -8,6 +8,8 @@ public class EnemyAI : MonoBehaviour {
     public float movementSpeed;
     [SerializeField]
     EnemyState currentState;
+    [SerializeField]
+    GameObject initialSpawnPoint;
 
     private Rigidbody2D rigidBody;
     private GameObject player;
@@ -15,6 +17,24 @@ public class EnemyAI : MonoBehaviour {
     private void Awake () {
         rigidBody = GetComponent<Rigidbody2D> ();
         player = GameObject.FindWithTag ("Player");
+    }
+    private void OnEnable()
+    {
+        GameManager.OnGameStateChange += OnGameStateChange;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnGameStateChange -= OnGameStateChange;
+    }
+
+
+    private void OnGameStateChange(GameState newGameState)
+    {
+        if (newGameState == GameState.SetupGame)
+        {
+            transform.position = initialSpawnPoint.transform.position;
+        }
     }
 
     public void SetState(EnemyState newEnemyState)

@@ -13,12 +13,22 @@ public class EnemyHealth : MonoBehaviour
     //todo move this to an enemy manager or something. Doesn't respawn enemies right now
     private void Awake()
     {
-        GameManager.OnGameStateChange += RestartTrigger;
         Restart();
     }
-    private void RestartTrigger(GameState gs)
+
+    private void OnEnable()
     {
-        if (gs == GameState.SetupGame)
+        GameManager.OnGameStateChange += OnGameStateChange;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnGameStateChange -= OnGameStateChange;
+    }
+
+    private void OnGameStateChange(GameState newGameState)
+    {
+        if (newGameState == GameState.SetupGame)
         {
             Restart();
         }
