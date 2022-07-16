@@ -6,6 +6,10 @@ using UnityEngine.InputSystem;
 
 public class DiceDragManager : MonoBehaviour {
 
+    public delegate void DiceHover (GameObject dice);
+    public static event DiceHover diceStartHover;
+    public static event DiceHover diceEndHover;
+
     public delegate void DiceRollCompleted (GameObject dice);
     public static event DiceRollCompleted diceRollCompleted;
 
@@ -17,6 +21,7 @@ public class DiceDragManager : MonoBehaviour {
     private static Vector3 UP = -Vector3.forward;
 
     private Camera mainCamera;
+    private GameObject diceThatIsBeingHovered;
     private GameObject diceThatIsDragging;
     private GameObject diceThatIsResolving;
     private WaitForFixedUpdate waitforFixedUpdate = new WaitForFixedUpdate ();
@@ -36,18 +41,28 @@ public class DiceDragManager : MonoBehaviour {
         mouseClick.canceled -= MouseReleased;
         mouseClick.Disable ();
     }
+
     private void MousePressed (InputAction.CallbackContext context) {
+        GameObject hitDice = rayCastHitADice ();
+        if (hitDice != null) {
+            diceThatIsDragging = hitDice;
+            StartCoroutine (DragUpdate (hitDice));
+        }
+    }
+
+    // Returns the dice GameObject if one was hit, else null
+    private GameObject rayCastHitADice () {
         Ray ray = mainCamera.ScreenPointToRay (Mouse.current.position.ReadValue ());
         RaycastHit hit;
         if (Physics.Raycast (ray, out hit)) {
             if (hit.collider != null) {
                 GameObject hitGameObject = hit.collider.gameObject;
                 if (hitGameObject.tag.Equals ("Dice")) {
-                    diceThatIsDragging = hitGameObject;
-                    StartCoroutine (DragUpdate (hitGameObject));
+                    return hitGameObject;
                 }
             }
         }
+        return null;
     }
 
     private IEnumerator DragUpdate (GameObject clickedObject) {
@@ -74,14 +89,32 @@ public class DiceDragManager : MonoBehaviour {
         }
     }
 
-    void Update () {
+    private void Update () {
+        tryResolveDiceRoll ();
+        tryDiceHover ();
+    }
+
+    private void tryResolveDiceRoll () {
         if (diceThatIsResolving != null) {
             Vector3 diceVelocity = diceThatIsResolving.GetComponent<Rigidbody> ().velocity;
-            if (diceVelocity.Equals(Vector3.zero)) {
+            if (diceVelocity.Equals (Vector3.zero)) {
                 if (diceRollCompleted != null) {
-                    diceRollCompleted(diceThatIsResolving);
+                    diceRollCompleted (diceThatIsResolving);
                 }
                 diceThatIsResolving = null;
+            }
+        }
+    }
+
+    private void tryDiceHover () {
+        if (diceStartHover != null) {
+            GameObject hitDice = rayCastHitADice ();
+            if (hitDice != null && diceThatIsBeingHovered == null) {
+                diceThatIsBeingHovered = hitDice;
+                diceStartHover (diceThatIsBeingHovered);
+            } else if (hitDice == null && diceThatIsBeingHovered != null) {
+                diceEndHover (diceThatIsBeingHovered);
+                diceThatIsBeingHovered = null;
             }
         }
     }
