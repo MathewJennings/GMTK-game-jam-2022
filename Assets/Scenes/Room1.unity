@@ -4218,6 +4218,30 @@ PrefabInstance:
       propertyPath: mouseDragPhysicsSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1304212513530839010, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: swipeScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304212513530839010, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: swipeDamage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304212513530839010, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: swipeAngleDegrees
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629473257246733932, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: swipeScale
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629473257246733932, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: swipeDamage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629473257246733932, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: swipeAngleDegrees
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 4691256118945542106, guid: ec802dec104837f489714fa0d13745f9, type: 3}
       propertyPath: m_Name
       value: Dice
@@ -4265,6 +4289,54 @@ PrefabInstance:
     - target: {fileID: 5355167230429508960, guid: ec802dec104837f489714fa0d13745f9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669235347998726023, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: swipeScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669235347998726023, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: swipeDamage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669235347998726023, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: swipeAngleDegrees
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648058964690099076, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: swipeScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648058964690099076, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: swipeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648058964690099076, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: swipeAngleDegrees
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6749191878264339346, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: swipeScale
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6749191878264339346, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: swipeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6749191878264339346, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: swipeAngleDegrees
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817750243038304979, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: swipeScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817750243038304979, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: swipeDamage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817750243038304979, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: swipeAngleDegrees
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

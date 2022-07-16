@@ -22,7 +22,8 @@ public class PlayerAttackController : MonoBehaviour
 
     public void Swipe(float swipeAngle, float swipeSize, int swipeDamage)
     {
-        Debug.Log("Attack angle: " + swipeAngle + " Swipe Size: " + swipeSize);
+        Debug.Log("Attack angle: " + swipeAngle + " Swipe Size: " + swipeSize + " Damage: " + swipeDamage);
+         
         SwordSwipe.Create(prefab, swipeAngle, swipeSize, .4f, swipeDamage, myDie, playerPosition);
     }
 }

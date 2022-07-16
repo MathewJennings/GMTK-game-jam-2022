@@ -25,10 +25,10 @@ public class CheckDiceSide : MonoBehaviour {
         }
         GameObject sideThatIsUp = other.GetComponent<DiceSide>().oppositeSide;
         Debug.Log ("Rolled " + sideThatIsUp);
-        // These would be the properties from the die
-        var swipeAngle = Random.Range(60.0f, 180.0f);
-        var swipeSize = Random.Range(.5f, 2.0f);
-        var swipeDamage = 1;
+        var up = sideThatIsUp.GetComponent<DiceSide>();
+        var swipeAngle = up.swipeAngleDegrees;
+        var swipeSize = up.swipeScale;
+        var swipeDamage = up.swipeDamage;
 
         player.GetComponent<PlayerAttackController>().Swipe(swipeAngle, swipeSize, swipeDamage);
         diceWhoseRollCompleted = null;
