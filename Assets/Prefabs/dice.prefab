@@ -59,6 +59,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 2024199154}
+  swipeAngleDegrees: 120
+  swipeScale: 1
+  swipeDamage: 3
 --- !u!1 &444259735
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,6 +121,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 1107398328}
+  swipeAngleDegrees: 180
+  swipeScale: 2
+  swipeDamage: 3
 --- !u!1 &728005105
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +183,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 880551567}
+  swipeAngleDegrees: 120
+  swipeScale: 1
+  swipeDamage: 2
 --- !u!1 &880551567
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,6 +245,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 728005105}
+  swipeAngleDegrees: 120
+  swipeScale: 1
+  swipeDamage: 2
 --- !u!1 &1107398328
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +307,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 444259735}
+  swipeAngleDegrees: 60
+  swipeScale: 0.5
+  swipeDamage: 1
 --- !u!1 &2024199154
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +369,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 338020113}
+  swipeAngleDegrees: 120
+  swipeScale: 1
+  swipeDamage: 1
 --- !u!1 &4691256118945542106
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +411,7 @@ Transform:
   - {fileID: 338020114}
   - {fileID: 444259736}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &193864118
 Rigidbody:
