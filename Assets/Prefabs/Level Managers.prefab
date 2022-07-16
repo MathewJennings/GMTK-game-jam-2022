@@ -32,7 +32,7 @@ Transform:
   - {fileID: 1869437941553595956}
   - {fileID: 1869437941944676963}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1869437941438354688
 GameObject:
@@ -187,4 +187,4 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   mouseDragPhysicsSpeed: 3
-  diceStopRollMaxVelocity: 0
+  diceStopRollMaxVelocity: 0.05
