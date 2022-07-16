@@ -12,7 +12,6 @@ public class TriggerNextLevel : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Go to next level!");
             SceneManager.LoadScene(nameOfLevelToTrigger);
         }
     }

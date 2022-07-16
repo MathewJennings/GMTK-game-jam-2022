@@ -37,7 +37,7 @@ public class EnemyHealth : MonoBehaviour
     {
         enemyHealthBar.SetMaxHealth(enemyMaxHealth);
         SetHealth(enemyMaxHealth);
-        enemyAI.SetState(EnemyState.Chasing);
+        enemyAI.SetState(enemyAI.initialState);
     }
 
     // Update is called once per frame
@@ -64,7 +64,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
-        enemyAI.SetState(EnemyState.Patroling);
+        enemyAI.SetState(EnemyState.Idling);
         GameManager.Instance.logEnemyDeath(this.gameObject);
         Destroy(this.gameObject);
     }
