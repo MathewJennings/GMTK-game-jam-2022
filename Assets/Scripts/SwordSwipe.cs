@@ -23,14 +23,16 @@ public class SwordSwipe : MonoBehaviour
     public static SwordSwipe Create(Object prefab, float sA, float sS, float sDS, int d, GameObject mD, Transform playerPosition)
     {
         GameObject newObject = Instantiate(prefab) as GameObject;
+        newObject.transform.SetParent(playerPosition);
         SwordSwipe yourObject = newObject.GetComponent<SwordSwipe>();
         yourObject.swipeAngle = sA;
         yourObject.swipeSize = sS;
         yourObject.swipeDurationSec = sDS;
         yourObject.damage = d;
         yourObject.myDie = mD;
-        yourObject.transform.position = playerPosition.position;
+        //yourObject.transform.position = playerPosition.position;
         yourObject.transform.localScale = yourObject.transform.localScale * yourObject.swipeSize;
+
         CalculateInitialRotation(yourObject);
         Destroy(yourObject.gameObject, yourObject.swipeDurationSec);
 
@@ -55,6 +57,7 @@ public class SwordSwipe : MonoBehaviour
 
     void Update()
     {
+        transform.localPosition = new Vector3(0, 0, 0);
         if (timePercentage < 1.0f)
         {
             transform.rotation = Quaternion.RotateTowards(
