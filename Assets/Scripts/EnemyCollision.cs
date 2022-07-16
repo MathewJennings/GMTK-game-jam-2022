@@ -10,7 +10,7 @@ public class EnemyCollision : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Collided With Enemy!!");
-            GetComponent<EnemyState>().TakeDamage(other);
+            GetComponent<EnemyState>().TakeDamage(other.transform, 1);
         }
     }
 }

@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
     private int health;
     public int MAX_HEALTH = 5;
     public PlayerHealth playerHealth;
+    public PlayerAttackController playerAttackController;
 
     private void Awake () {
         rigidBody = GetComponent<Rigidbody2D> ();
@@ -49,6 +50,13 @@ public class PlayerController : MonoBehaviour {
 
     public void OnInteract (InputAction.CallbackContext context) {
         Debug.Log("Interacted!");
+        StartCoroutine(AttackCo());
+    }
+
+    private IEnumerator AttackCo()
+    {
+        playerAttackController.Swipe();
+        yield return null;
     }
 
     public void TakeDamage()
