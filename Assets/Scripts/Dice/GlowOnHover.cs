@@ -8,14 +8,17 @@ public class GlowOnHover : MonoBehaviour {
     [SerializeField]
     Color hoverColor;
 
-    private Camera mainCamera;
-    private Renderer renderer;
-    private Color originalColor;
+    private SpriteRenderer[] renderers;
+    private Color[] originalColors;
 
     private void Awake () {
-        mainCamera = Camera.main;
-        renderer = GetComponentInChildren<Renderer> ();
-        originalColor = renderer.material.color;
+        renderers = GetComponentsInChildren<SpriteRenderer>();
+        originalColors = new Color[renderers.Length];
+        Debug.Log(renderers);
+        for (int i = 0; i < renderers.Length; i++) {
+            Debug.Log(renderers[i]);
+            originalColors[i] = renderers[i].color;
+        }
     }
 
     private void OnEnable () {
@@ -30,13 +33,17 @@ public class GlowOnHover : MonoBehaviour {
 
     private void startDiceHover (GameObject diceBeingHovered) {
         if (diceBeingHovered == this.gameObject) {
-            renderer.material.color = hoverColor;
+            foreach(SpriteRenderer renderer in renderers) {
+                renderer.color = hoverColor;
+            }
         }
     }
 
     private void endDiceHover (GameObject diceBeingHovered) {
         if (diceBeingHovered == this.gameObject) {
-            renderer.material.color = originalColor;
+            for (int i = 0; i < renderers.Length; i++) {
+                renderers[i].color = originalColors[i];
+            }
         }
     }
 }

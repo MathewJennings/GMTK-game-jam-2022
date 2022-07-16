@@ -114,7 +114,7 @@ public class DiceDragManager : MonoBehaviour {
             if (hitDice != null && diceThatIsBeingHovered == null) {
                 diceThatIsBeingHovered = hitDice;
                 diceStartHover (diceThatIsBeingHovered);
-            } else if (hitDice == null && diceThatIsBeingHovered != null) {
+            } else if (hitDice == null && diceThatIsBeingHovered != null && diceThatIsResolving != null) {
                 diceEndHover (diceThatIsBeingHovered);
                 diceThatIsBeingHovered = null;
             }
