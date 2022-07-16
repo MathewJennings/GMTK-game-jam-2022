@@ -31,7 +31,6 @@ public class GameStateListener : MonoBehaviour
 
     private void enableAndDisableGameObjects()
     {
-        Debug.Log("enableAndDisableGameObjects");
         foreach(GameObject toEnable in enableGameObjectsOnRoomVictory)
         {
             toEnable.SetActive(true);
