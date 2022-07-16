@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.RoomVictory:
                 break;
+            case GameState.ProceedingToNextLevel:
+                break;
             default:
                 throw new System.ArgumentOutOfRangeException(nameof(newState), newState, null);
 
@@ -64,6 +66,11 @@ public class GameManager : MonoBehaviour
     {
         UpdateGameState(GameState.SetupGame);
     }
+
+    public void proceedToNextLevel()
+    {
+        UpdateGameState(GameState.ProceedingToNextLevel);
+    }
 }
 public enum GameState
 {
@@ -71,6 +78,7 @@ public enum GameState
     InGame,
     DiceMenu,
     Defeat,
-    RoomVictory
+    RoomVictory,
+    ProceedingToNextLevel
 
 }

@@ -74,7 +74,7 @@ public class SwordSwipe : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyState>().TakeDamage(this.transform, damage);
+            other.GetComponent<EnemyHealth>().TakeDamage(this.transform, damage);
         }
     }
 }

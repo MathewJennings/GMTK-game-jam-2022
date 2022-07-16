@@ -4,26 +4,49 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour {
 
-    [SerializeField] public float initialSpeed;
-    private float currentSpeed;
-    Rigidbody2D rigidBody;
-    GameObject player;
+    [SerializeField]
+    public float movementSpeed;
+    [SerializeField]
+    EnemyState currentState;
+
+    private Rigidbody2D rigidBody;
+    private GameObject player;
 
     private void Awake () {
         rigidBody = GetComponent<Rigidbody2D> ();
         player = GameObject.FindWithTag ("Player");
-        currentSpeed = initialSpeed;
+    }
+
+    public void SetState(EnemyState newEnemyState)
+    {
+        currentState = newEnemyState;
     }
 
     private void FixedUpdate () {
+        switch (currentState)
+        {
+            case EnemyState.Idling:
+                break;
+            case EnemyState.Patroling:
+                break;
+            case EnemyState.Chasing:
+                chasePlayer();
+                break;
+        }
+    }
+
+    private void chasePlayer()
+    {
         Vector2 heading = player.transform.position - transform.position;
         float distance = heading.magnitude;
         Vector2 direction = heading / distance;
-        rigidBody.velocity = direction * currentSpeed;
+        rigidBody.velocity = direction * movementSpeed;
     }
+}
 
-    public void SetSpeed(float s)
-    {
-        currentSpeed = s;
-    }
+public enum EnemyState
+{
+    Idling,
+    Patroling,
+    Chasing
 }

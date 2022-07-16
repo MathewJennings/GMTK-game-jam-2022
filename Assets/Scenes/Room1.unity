@@ -9827,6 +9827,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3274472531676299145, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
   m_PrefabInstance: {fileID: 1092356179}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1092356183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3869491458034627984, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
+  m_PrefabInstance: {fileID: 1092356179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1180262260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10207,6 +10212,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2112526801, guid: cf7ef457c26b8cc47bd62ac51462121e, type: 3}
+      propertyPath: playerSpawnPoint
+      value: 
+      objectReference: {fileID: 1092356183}
+    - target: {fileID: 2112526801, guid: cf7ef457c26b8cc47bd62ac51462121e, type: 3}
       propertyPath: enableGameObjectsOnRoomVictory.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -10558,7 +10567,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1406325417}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: restartGame
+        m_MethodName: proceedToNextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11656,7 +11665,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.25
+  m_fontSize: 40.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11801,6 +11810,10 @@ PrefabInstance:
     - target: {fileID: 2448730445537283245, guid: 6cef81b7636a49046af4a8a26c2df44c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063782145614063775, guid: 6cef81b7636a49046af4a8a26c2df44c, type: 3}
+      propertyPath: currentState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7770168242400850402, guid: 6cef81b7636a49046af4a8a26c2df44c, type: 3}
       propertyPath: m_Name
