@@ -55,9 +55,8 @@ public class EnemyState : MonoBehaviour
     public void Die()
     {
         enemyAI.SetSpeed(0);
-        Destroy(this.gameObject, 1);
-        //TODO this should eventually be put on an enemy manager to check if all enemies are defeated
-        GameManager.Instance.UpdateGameState(GameState.RoomVictory);
+        GameManager.Instance.logEnemyDeath(this.gameObject);
+        Destroy(this.gameObject);
     }
 
     private void PushAway(Transform t)

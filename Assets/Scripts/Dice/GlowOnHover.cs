@@ -14,9 +14,7 @@ public class GlowOnHover : MonoBehaviour {
     private void Awake () {
         renderers = GetComponentsInChildren<SpriteRenderer>();
         originalColors = new Color[renderers.Length];
-        Debug.Log(renderers);
         for (int i = 0; i < renderers.Length; i++) {
-            Debug.Log(renderers[i]);
             originalColors[i] = renderers[i].color;
         }
     }

@@ -7,11 +7,14 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameState state;
     public static event System.Action<GameState> OnGameStateChange;
-    // Start is called before the first frame update
+
+
+    private List<GameObject> enemiesInLevel;
 
     private void Awake()
     {
         Instance = this;
+        enemiesInLevel = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
     }
 
     void Start()
@@ -46,6 +49,15 @@ public class GameManager : MonoBehaviour
 
         }
         OnGameStateChange?.Invoke(newState);
+    }
+
+    public void logEnemyDeath(GameObject enemy)
+    {
+        enemiesInLevel.Remove(enemy);
+        if (enemiesInLevel.Count == 0)
+        {
+            UpdateGameState(GameState.RoomVictory);
+        }
     }
 
     public void restartGame()
