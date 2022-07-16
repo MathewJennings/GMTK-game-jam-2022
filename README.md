@@ -69,10 +69,10 @@ First sprint
     DONE: faces that trigger differnt actions
         single sword die, literally number 1-6
 
-    NPE bug on dice check
-    dice skin
-    change swipe angle on 6 to 179
-    make the swipe animation follow the player
+    DONE: NPE bug on dice check
+    DONE: dice skin
+    DONE: change swipe angle on 6 to 179
+    DONE: make the swipe animation follow the player
 
 Second sprint:
     Reward Menu: second die
