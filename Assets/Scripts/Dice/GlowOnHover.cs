@@ -30,14 +30,12 @@ public class GlowOnHover : MonoBehaviour {
 
     private void startDiceHover (GameObject diceBeingHovered) {
         if (diceBeingHovered == this.gameObject) {
-            Debug.Log ("Hover on " + diceBeingHovered);
             renderer.material.color = hoverColor;
         }
     }
 
     private void endDiceHover (GameObject diceBeingHovered) {
         if (diceBeingHovered == this.gameObject) {
-            Debug.Log ("Hover off " + diceBeingHovered);
             renderer.material.color = originalColor;
         }
     }

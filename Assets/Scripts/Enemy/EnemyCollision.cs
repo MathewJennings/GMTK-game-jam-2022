@@ -9,8 +9,7 @@ public class EnemyCollision : MonoBehaviour
         //todo change this to weapon or something that
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Collided With Enemy!!");
-            GetComponent<EnemyState>().TakeDamage(other.transform, 1);
+            // GetComponent<EnemyState>().TakeDamage(other.transform, 1);
         }
     }
 }

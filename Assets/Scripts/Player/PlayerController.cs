@@ -48,13 +48,8 @@ public class PlayerController : MonoBehaviour {
         movement = context.ReadValue<Vector2> ();
     }
 
-    public void OnInteract (InputAction.CallbackContext context) {
-        Debug.Log("Interacted!");
-    }
-
     public void TakeDamage()
     {
-        Debug.Log("TakeDamage");
         SetHealth(--health);
     }
     public void SetHealth(int h)

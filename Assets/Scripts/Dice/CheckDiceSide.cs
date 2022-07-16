@@ -24,7 +24,6 @@ public class CheckDiceSide : MonoBehaviour {
             return;
         }
         GameObject sideThatIsUp = other.GetComponent<DiceSide>().oppositeSide;
-        Debug.Log ("Rolled " + sideThatIsUp);
         var up = sideThatIsUp.GetComponent<DiceSide>();
         var swipeAngle = up.swipeAngleDegrees;
         var swipeSize = up.swipeScale;
