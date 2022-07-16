@@ -24,19 +24,20 @@ public class SwordSwipe : MonoBehaviour
     {
         GameObject newObject = Instantiate(prefab) as GameObject;
         newObject.transform.SetParent(playerPosition);
-        SwordSwipe yourObject = newObject.GetComponent<SwordSwipe>();
-        yourObject.swipeAngle = sA;
-        yourObject.swipeSize = sS;
-        yourObject.swipeDurationSec = sDS;
-        yourObject.damage = d;
-        yourObject.myDie = mD;
-        //yourObject.transform.position = playerPosition.position;
-        yourObject.transform.localScale = yourObject.transform.localScale * yourObject.swipeSize;
+        SwordSwipe swordSwipe = newObject.GetComponent<SwordSwipe>();
+        swordSwipe.transform.localPosition = new Vector3(0, 0, 0);
+        swordSwipe.swipeAngle = sA;
+        swordSwipe.swipeSize = sS;
+        swordSwipe.swipeSize = 1;
+        swordSwipe.swipeDurationSec = sDS;
+        swordSwipe.damage = d;
+        swordSwipe.myDie = mD;
+        swordSwipe.transform.localScale = swordSwipe.transform.localScale * swordSwipe.swipeSize;
 
-        CalculateInitialRotation(yourObject);
-        Destroy(yourObject.gameObject, yourObject.swipeDurationSec);
+        CalculateInitialRotation(swordSwipe);
+        Destroy(swordSwipe.gameObject, swordSwipe.swipeDurationSec);
 
-        return yourObject;
+        return swordSwipe;
     }
 
     private static void CalculateInitialRotation(SwordSwipe yourObject)
