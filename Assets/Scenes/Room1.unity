@@ -1865,7 +1865,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.25
+  m_fontSize: 40.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4240,7 +4240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4629473257246733932, guid: ec802dec104837f489714fa0d13745f9, type: 3}
       propertyPath: swipeAngleDegrees
-      value: 180
+      value: 179
       objectReference: {fileID: 0}
     - target: {fileID: 4691256118945542106, guid: ec802dec104837f489714fa0d13745f9, type: 3}
       propertyPath: m_Name
