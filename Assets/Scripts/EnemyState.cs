@@ -14,6 +14,7 @@ public class EnemyState : MonoBehaviour
     private void Awake()
     {
         GameManager.OnGameStateChange += RestartTrigger;
+        Restart();
     }
     private void RestartTrigger(GameState gs)
     {
@@ -34,10 +35,13 @@ public class EnemyState : MonoBehaviour
     {
 
     }
-    public void TakeDamage()
+    public void TakeDamage(Collider2D c)
     {
-        Debug.Log("Take Damage");
+        //todo set invuln timeout
+        Debug.Log("Take Damage health: " + health);
         SetHealth(--health);
+        PushAway(c);
+        Debug.Log("after Take Damage health: " + health);
     }
     public void SetHealth(int h)
     {
@@ -55,5 +59,14 @@ public class EnemyState : MonoBehaviour
         Destroy(this.gameObject, 1);
         //TODO this should eventually be put on an enemy manager to check if all enemies are defeated
         GameManager.Instance.UpdateGameState(GameState.RoomVictory);
+    }
+
+    private void PushAway(Collider2D c)
+    {
+        // Calculate relative position from source to player. TODO CHANGE THIS TO CONTACT POINT
+        Vector3 dir = transform.position - c.transform.position;
+        // And finally we add force in the direction of dir and multiply it by force. 
+        // TODO MAKE PUSHBACK AMOUNT A CONSTANT
+        GetComponent<Rigidbody2D>().AddForce(dir.normalized * 2500);
     }
 }

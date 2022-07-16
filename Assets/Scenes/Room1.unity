@@ -279,6 +279,10 @@ PrefabInstance:
       propertyPath: enemyAI
       value: 
       objectReference: {fileID: 333329578}
+    - target: {fileID: 2909806105921873152, guid: 6cef81b7636a49046af4a8a26c2df44c, type: 3}
+      propertyPath: enemyMaxHealth
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6063782145614063775, guid: 6cef81b7636a49046af4a8a26c2df44c, type: 3}
       propertyPath: initialSpeed
       value: 1
@@ -1940,7 +1944,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.25
+  m_fontSize: 33.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8022,7 +8026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7770168242400850407, guid: 569f6cfd9ccb33a4a8b0394237a83f2a, type: 3}
       propertyPath: MAX_HEALTH
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7770168242400850407, guid: 569f6cfd9ccb33a4a8b0394237a83f2a, type: 3}
       propertyPath: initialSpeed

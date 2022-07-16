@@ -18,7 +18,7 @@ public class TossDice : MonoBehaviour {
     }
 
     public void OnRollDice(InputValue value) {
-        Debug.Log ("Rolling Dice");
+        //Debug.Log ("Rolling Dice");
         float dirX = Random.Range (0, 500);
         float dirY = Random.Range (0, 500);
         float dirZ = Random.Range (0, 500);
