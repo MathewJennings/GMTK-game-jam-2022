@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameState state;
     public static event System.Action<GameState> OnGameStateChange;
+    public List<Transform> diceSpawnPoints;
 
 
     private List<GameObject> enemiesInLevel;
@@ -17,10 +18,14 @@ public class GameManager : MonoBehaviour
         enemiesInLevel = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
 
         List<Item> dice = PlayerPersistedState.Instance.getPlayerInventory().getItems();
-        foreach(Item die in dice)
+        for(int i = 0; i < dice.Count; i++)
         {
+            var die = dice[i];
             Object diePrefab = Resources.Load(die.GetPrefabPath());
-            Instantiate(diePrefab);
+            var currentSpawnPoint = diceSpawnPoints[i % diceSpawnPoints.Count];
+            //always spawn at z = -1;
+            Vector3 dieInitialSpawnPoint = new Vector3(currentSpawnPoint.position.x, currentSpawnPoint.position.y, -1);
+            Instantiate(diePrefab, dieInitialSpawnPoint, Quaternion.identity, currentSpawnPoint);
         }
     }
 
