@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     private List<GameObject> spawnedDice;
     private List<GameObject> enemiesInLevel;
 
-    private void Awake()
+
+    void Start()
     {
         Instance = this;
         enemiesInLevel = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
@@ -29,10 +30,6 @@ public class GameManager : MonoBehaviour
             Vector3 dieInitialSpawnPoint = new Vector3(currentSpawnPoint.position.x, currentSpawnPoint.position.y, -1);
             spawnedDice.Add(Instantiate(diePrefab, dieInitialSpawnPoint, Quaternion.identity, currentSpawnPoint) as GameObject);
         }
-    }
-
-    void Start()
-    {
         UpdateGameState(GameState.InGame);
     }
 
