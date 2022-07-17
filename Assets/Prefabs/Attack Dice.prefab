@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 1107398328}
-  swipeAngleDegrees: 180
+  swipeAngleDegrees: 179
   swipeScale: 2
   swipeTimeInSeconds: 0.4
   swipeDamage: 3

@@ -14,11 +14,11 @@ public class SwordSwipe : MonoBehaviour
     private float timePercentage = 0.0f;
     private Quaternion initialSwingRotation;
     private Quaternion targetSwingRotation;
+    private float intermediateDegreesRotated;
+
     private float spriteOffset = 45.0f; //the sword sprite is at a 45 degree angle
 
-    void Start()
-    {
-    }
+    private static float INTERMEDIATE_ANGLES = 179f;
 
     public static void Create(Object prefab, GameObject attackingDie, DiceSide attackingDiceSide)
     {
@@ -35,7 +35,6 @@ public class SwordSwipe : MonoBehaviour
         
         newSwordSwipe.transform.localScale = newSwordSwipe.transform.localScale * newSwordSwipe.swipeScale;
         newSwordSwipe.setInitialRotation();
-        Destroy(newSwordSwipe.gameObject, newSwordSwipe.swipeTimeInSeconds);
     }
 
     private void setInitialRotation()
@@ -50,16 +49,59 @@ public class SwordSwipe : MonoBehaviour
 
         initialSwingRotation = transform.rotation;
         initialSwingRotation = new Quaternion(initialSwingRotation.x, initialSwingRotation.y, initialSwingRotation.z, initialSwingRotation.w);
-        Debug.Log("initial: " + initialSwingRotation.eulerAngles);
         targetSwingRotation = new Quaternion(initialSwingRotation.x, initialSwingRotation.y, initialSwingRotation.z, initialSwingRotation.w);
-        targetSwingRotation *= Quaternion.Euler(0, 0, -swipeAngleDegrees); // the target rotation is an additional swipeAngle degrees clockwise from the starting angle
-        Debug.Log("target: " + targetSwingRotation.eulerAngles);
+        if (swipeAngleDegrees > INTERMEDIATE_ANGLES)
+        {
+            setTargetRotation(INTERMEDIATE_ANGLES);
+        }
+        else
+        {
+            setTargetRotation(swipeAngleDegrees);
+        }
+    }
+
+    private void setTargetRotation(float targetRotation)
+    {
+        intermediateDegreesRotated += targetRotation;
+        targetSwingRotation *= Quaternion.Euler(0, 0, -targetRotation); // the target rotation is an additional "targetRotation" degrees clockwise from the starting angle
     }
 
     void Update()
     {
-        timePercentage += Time.deltaTime / swipeTimeInSeconds;
+        timePercentage += Time.deltaTime / (swipeTimeInSeconds * intermediateDegreesRotated / swipeAngleDegrees);
         transform.localRotation = Quaternion.Slerp(initialSwingRotation, targetSwingRotation, timePercentage);
+        if (completedRotation())
+        {
+            if (intermediateDegreesRotated < swipeAngleDegrees)
+            {
+                KeepRotating();
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+        }
+        Debug.Log(completedRotation() + ": " + transform.localRotation.eulerAngles + " vs " + targetSwingRotation.eulerAngles);
+    }
+
+    private bool completedRotation()
+    {
+        return (transform.localRotation.eulerAngles - targetSwingRotation.eulerAngles).magnitude < .05f;
+    }
+
+    private void KeepRotating()
+    {
+        timePercentage = 0;
+        Debug.Log(timePercentage);
+        initialSwingRotation = new Quaternion(targetSwingRotation.x, targetSwingRotation.y, targetSwingRotation.z, targetSwingRotation.w);
+        if (swipeAngleDegrees - intermediateDegreesRotated > INTERMEDIATE_ANGLES)
+        {
+            setTargetRotation(INTERMEDIATE_ANGLES);
+        }
+        else
+        {
+            setTargetRotation(swipeAngleDegrees - intermediateDegreesRotated);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
