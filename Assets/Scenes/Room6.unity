@@ -23143,6 +23143,10 @@ PrefabInstance:
       propertyPath: nameOfLevelToTrigger
       value: Room1
       objectReference: {fileID: 0}
+    - target: {fileID: 8384130156923120245, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
+      propertyPath: isLastLevel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182080471006810787, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
       propertyPath: m_RootOrder
       value: 8
