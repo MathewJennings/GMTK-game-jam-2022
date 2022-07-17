@@ -39,6 +39,7 @@ public class Inventory
 
     internal void SwapItem(Item item, Inventory other)
     {
+        Debug.Log("Swapped");
         RemoveItem(item);
         other.AddItem(item);
     }
