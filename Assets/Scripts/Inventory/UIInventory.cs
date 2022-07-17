@@ -84,6 +84,20 @@ public class UIInventory : MonoBehaviour
 
                 }; 
                 image.sprite = item.GetSprite();
+                //Hack
+                if (item.itemType == Item.ItemType.SpinSwordDice)
+                {
+                    Color newCol;
+                    if (ColorUtility.TryParseHtmlString("#DBFDF8", out newCol))
+                        image.color = newCol;
+                }
+                //Hack
+                if (item.itemType == Item.ItemType.TeleportDice)
+                {
+                    Color newCol;
+                    if (ColorUtility.TryParseHtmlString("#D36CF6", out newCol))
+                        image.color = newCol;
+                }
                 var dndItem = image.gameObject.GetComponent<DragAndDropItem>();
                 dndItem.SetItem(item);
                 dndItem.SetOriginalInventory(inventory);
