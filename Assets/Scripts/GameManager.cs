@@ -12,13 +12,14 @@ public class GameManager : MonoBehaviour
 
     private List<GameObject> enemiesInLevel;
 
-    private void Awake()
+
+    void Start()
     {
         Instance = this;
         enemiesInLevel = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
 
         List<Item> dice = PlayerPersistedState.Instance.getPlayerInventory().getItems();
-        for(int i = 0; i < dice.Count; i++)
+        for (int i = 0; i < dice.Count; i++)
         {
             var die = dice[i];
             Object diePrefab = Resources.Load(die.GetPrefabPath());
@@ -27,10 +28,6 @@ public class GameManager : MonoBehaviour
             Vector3 dieInitialSpawnPoint = new Vector3(currentSpawnPoint.position.x, currentSpawnPoint.position.y, -1);
             Instantiate(diePrefab, dieInitialSpawnPoint, Quaternion.identity, currentSpawnPoint);
         }
-    }
-
-    void Start()
-    {
         UpdateGameState(GameState.InGame);
     }
 
