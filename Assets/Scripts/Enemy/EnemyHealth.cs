@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
 
-    public EnemyHealthBar enemyHealthBar;
+    public EnemyHealthBarDiscrete enemyHealthBarDiscrete;
+//    public EnemyHealthBar enemyHealthBar;
     public int enemyMaxHealth;
     private int health;
     public EnemyAI enemyAI;
@@ -35,7 +36,8 @@ public class EnemyHealth : MonoBehaviour
     }
     private void Restart()
     {
-        enemyHealthBar.SetMaxHealth(enemyMaxHealth);
+        enemyHealthBarDiscrete.numOfHearts = enemyMaxHealth;
+        //enemyHealthBar.SetMaxHealth(enemyMaxHealth);
         SetHealth(enemyMaxHealth);
         enemyAI.SetState(enemyAI.initialState);
     }
@@ -47,6 +49,7 @@ public class EnemyHealth : MonoBehaviour
     }
     public void TakeDamage(Transform t, int damage)
     {
+        Debug.Log("damage");
         //todo set invuln timeout
         health -= damage;
         SetHealth(health);
@@ -55,8 +58,9 @@ public class EnemyHealth : MonoBehaviour
     public void SetHealth(int h)
     {
         health = h;
-        enemyHealthBar.SetHealth(health);
-        if(health <= 0)
+        //enemyHealthBar.SetHealth(health);
+        enemyHealthBarDiscrete.health = health;
+        if (health <= 0)
         {
             Die();
         } 

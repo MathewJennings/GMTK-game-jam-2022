@@ -9,16 +9,12 @@ public class UIInventory : MonoBehaviour
 {
     private Inventory otherInventory; // not sure what this should look like yet. its playerInventory or rewardInventory
     public Inventory inventory;
-    public Transform itemSlotContainer;
-    public Transform itemSlotTemplate;
+    private Transform itemSlotContainer;
+    private Transform itemSlotTemplate;
     public int numSlots; 
 
     private void Awake()
     {
-        /*
-        itemSlotContainer = transform.Find("itemSlotContainer");
-        itemSlotTemplate = transform.Find("itemSlotTemplate");
-        */
     }
     public void SetInventory(Inventory inventory, Inventory otherInventory)
     {
@@ -26,6 +22,13 @@ public class UIInventory : MonoBehaviour
         this.otherInventory = otherInventory;
         inventory.OnItemListChanged += Inventory_OnItemListChanged;
         RefreshInventoryItems();
+    }
+    private void OnDisable()
+    {
+        if(inventory!=null)
+        {
+            inventory.OnItemListChanged -= Inventory_OnItemListChanged;
+        }
     }
 
     private void Inventory_OnItemListChanged(object sender, EventArgs e)
@@ -35,13 +38,17 @@ public class UIInventory : MonoBehaviour
 
     public void RefreshInventoryItems()
     {
+        itemSlotContainer = transform.Find("itemSlotContainer");
+        itemSlotTemplate = transform.Find("itemSlotTemplate");
+
         //destroy old transforms
-        foreach(Transform child in itemSlotContainer)
+        foreach (Transform child in itemSlotContainer)
         {
-            if(child == itemSlotTemplate)
+            if (child == itemSlotTemplate)
             {
                 continue;
-            } else
+            }
+            else
             {
                 Destroy(child.gameObject);
             }
