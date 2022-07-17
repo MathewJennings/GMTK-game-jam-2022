@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     public int MAX_HEALTH = 5;
     public PlayerHealth playerHealth;
     public PlayerAttackController playerAttackController;
+    public AudioClip damageSound;
 
     private PlayerPersistedState playerPersistedState;
 
@@ -63,6 +64,9 @@ public class PlayerController : MonoBehaviour {
     public void TakeDamage()
     {
         SetHealth(--health);
+        if(health >= 0 ){
+            GameObject.FindGameObjectWithTag("MusicManager").GetComponent<AudioSource>().PlayOneShot(damageSound, 0.5f);
+        }
     }
     public void SetHealth(int h)
     {
