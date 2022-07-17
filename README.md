@@ -95,6 +95,9 @@ Third sprint:
     If wake up early enough, teleport die
         every side is exactly the same
     Add dice spawn positions
+    Update victory screen so that you must select reward die. Delete backpack
+    Add teleporting enemies
+    Add large no knockback enemy
     Craft a story for 6 levels
         1: basic die (TUTORIAL)
         2: 1 basic die (wider level, enemy behaviors, direction of die. Locks die in bottom corner)
