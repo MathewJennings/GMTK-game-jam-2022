@@ -60,6 +60,9 @@ MonoBehaviour:
   backPackInventoryUIInventory: {fileID: 7359373002449797811}
   rewardInventoryUIInventory: {fileID: 2732304114047097576}
   playerInventoryUIInventory: {fileID: 4571350274162714507}
+  title: {fileID: 201620446740435528}
+  subtitle: {fileID: 194112106229280572}
+  isLastLevel: 0
 --- !u!1 &1164102115575321530
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,7 +609,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.1
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4829,7 +4832,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.55
+  m_fontSize: 40.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

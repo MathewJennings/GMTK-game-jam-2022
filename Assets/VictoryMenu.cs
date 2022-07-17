@@ -10,7 +10,11 @@ public class VictoryMenu : MonoBehaviour
     public UIInventory backPackInventoryUIInventory;
     public UIInventory rewardInventoryUIInventory;
     public UIInventory playerInventoryUIInventory;
+    public TextMeshProUGUI title;
+    public TextMeshProUGUI subtitle;
     private Button confirmButton;
+    public bool isLastLevel;
+
     void Awake()
     {
         backPackInventoryMenu.SetActive(PlayerPersistedState.Instance.isFreeplayMode);
@@ -23,6 +27,18 @@ public class VictoryMenu : MonoBehaviour
         backPackInventoryUIInventory.GetComponentInChildren<UIInventory>().inventory.OnItemListChanged += CheckConfirmButton;
         rewardInventoryUIInventory.GetComponentInChildren<UIInventory>().inventory.OnItemListChanged += CheckConfirmButton;
         playerInventoryUIInventory.GetComponentInChildren<UIInventory>().inventory.OnItemListChanged += CheckConfirmButton;
+
+        bool isRewardsEmpty = rewardInventoryUIInventory.inventory.getCount() == 0;
+        if(isLastLevel)
+        {
+            title.text = "Congratulations! You're dice-tacular!";
+            subtitle.text = "Feel free to continue playing with your current die";
+            PlayerPersistedState.Instance.isFreeplayMode = true;
+        }
+        if (isRewardsEmpty)
+        {
+            subtitle.text = "No rewards this time. Keep on rolling on.";
+        }
     }
 
     private void OnDisable()
@@ -38,6 +54,11 @@ public class VictoryMenu : MonoBehaviour
             bool isRewardsEmpty = rewardInventoryUIInventory.inventory.getCount() == 0;
             confirmButton.interactable = isRewardsEmpty;
             confirmButton.GetComponentInChildren<TextMeshProUGUI>().text ="Go to Next Level";
+        }
+        if (isLastLevel)
+        {
+            confirmButton.GetComponentInChildren<TextMeshProUGUI>().text = "New Game +";
+
         }
 
     }
