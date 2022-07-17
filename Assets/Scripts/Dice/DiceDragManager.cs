@@ -78,16 +78,18 @@ public class DiceDragManager : MonoBehaviour {
     }
 
     private void MouseReleased (InputAction.CallbackContext context) {
-        if (diceThatIsDragging != null) {
-            Rigidbody rigidbody = diceThatIsDragging.GetComponent<Rigidbody> ();
+        if (diceThatIsDragging != null)
+        {
+            Rigidbody rigidbody = diceThatIsDragging.GetComponent<Rigidbody>();
 
-            float dirX = Random.Range (0, 500);
-            float dirY = Random.Range (0, 500);
-            float dirZ = Random.Range (0, 500);
-            rigidbody.AddForce (UP * 500);
-            rigidbody.AddTorque (dirX, dirY, dirZ);
+            float dirX = Random.Range(0, 500);
+            float dirY = Random.Range(0, 500);
+            float dirZ = Random.Range(0, 500);
+            rigidbody.AddForce(UP * 500);
+            rigidbody.AddTorque(dirX, dirY, dirZ);
             diceThatIsResolving = diceThatIsDragging;
             diceThatIsDragging = null;
+            endHover();
         }
     }
 
@@ -114,10 +116,18 @@ public class DiceDragManager : MonoBehaviour {
             if (hitDice != null && diceThatIsBeingHovered == null) {
                 diceThatIsBeingHovered = hitDice;
                 diceStartHover (diceThatIsBeingHovered);
-            } else if (hitDice == null && diceThatIsBeingHovered != null && diceThatIsResolving != null) {
-                diceEndHover (diceThatIsBeingHovered);
-                diceThatIsBeingHovered = null;
+            } else if (hitDice == null && diceThatIsBeingHovered != null) {
+                if (diceThatIsDragging == null)
+                {
+                    endHover();
+                }
             }
         }
+    }
+
+    private void endHover()
+    {
+        diceEndHover(diceThatIsBeingHovered);
+        diceThatIsBeingHovered = null;
     }
 }
