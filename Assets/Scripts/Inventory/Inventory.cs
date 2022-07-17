@@ -8,6 +8,10 @@ public class Inventory
     public event EventHandler OnItemListChanged;
     private List<Item> itemList;
 
+    public List<Item> getItems()
+    {
+        return itemList;
+    }
     public int getCount()
     {
         return itemList.Count;

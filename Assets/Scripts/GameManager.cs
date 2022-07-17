@@ -15,6 +15,13 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         enemiesInLevel = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
+
+        List<Item> dice = PlayerPersistedState.Instance.getPlayerInventory().getItems();
+        foreach(Item die in dice)
+        {
+            Object diePrefab = Resources.Load(die.GetPrefabPath());
+            Instantiate(diePrefab);
+        }
     }
 
     void Start()
