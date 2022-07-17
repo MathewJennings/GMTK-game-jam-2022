@@ -216,6 +216,8 @@ MonoBehaviour:
   MAX_HEALTH: 4
   playerHealth: {fileID: 3375250955215879082}
   playerAttackController: {fileID: 8902866091904380093}
+  damageSound: {fileID: 8300000, guid: ab9ae8db7f7082f44aa2f6b5a74a9645, type: 3}
+  audioSource: {fileID: 0}
 --- !u!114 &659292642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,5 +265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3a60f5dcf961e84da4852d021d4d3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPosition: {fileID: 7770168242400850406}
-  myDie: {fileID: 0}
+  swipeSound: {fileID: 8300000, guid: 99183a6f2bd235a4ebbe6be468e93c87, type: 3}
+  warpSound: {fileID: 8300000, guid: 6ec5b5c509d32a3459f2cd4f3e986d02, type: 3}
+  audioSource: {fileID: 0}

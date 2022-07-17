@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerAttackController : MonoBehaviour
 {
     public static List<Object> attackPrefabs;
+    public AudioClip swipeSound;
+    public AudioClip warpSound;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +24,11 @@ public class PlayerAttackController : MonoBehaviour
         {
             case DieType.SwordDie:
                 SwordSwipe.Create(attackPrefabs[0], attackingDice, attackingDiceSide);
+                GameObject.FindGameObjectWithTag("MusicManager").GetComponent<AudioSource>().PlayOneShot(swipeSound, 0.5f);
                 break;
             case DieType.TeleportDie:
                 Teleport.ExecuteTeleport(attackingDice, attackingDiceSide);
+                GameObject.FindGameObjectWithTag("MusicManager").GetComponent<AudioSource>().PlayOneShot(warpSound, 0.5f);
                 break;
             default:
                 throw new System.Exception("Unrecognized die type");
