@@ -7,9 +7,9 @@ public class PlayerPersistedState : MonoBehaviour
     public static PlayerPersistedState Instance;
     public Inventory playerInventory;
     public Inventory playerBackpack;
+    public bool isFreeplayMode;
     private void Awake()
     {
-        Debug.Log("awake");
         if (Instance != null)
         {
             Destroy(gameObject);
@@ -17,12 +17,12 @@ public class PlayerPersistedState : MonoBehaviour
         }
 
         Instance = this;
+        isFreeplayMode = false;
         DontDestroyOnLoad(gameObject);
     }
 
     public Inventory getPlayerInventory()
     {
-        Debug.Log("getplayerinventory");
         if (Instance == null)
         {
             Debug.Log("null playerinventory");
@@ -30,7 +30,6 @@ public class PlayerPersistedState : MonoBehaviour
 
         if (Instance.playerInventory == null)
         {
-            Debug.Log("creating new playerinventory");
             Instance.playerInventory = new Inventory();
             Instance.playerInventory.AddItem(new Item { itemType = Item.ItemType.SwordDice });
         }
@@ -38,14 +37,12 @@ public class PlayerPersistedState : MonoBehaviour
     }
     public Inventory getPlayerBackpack()
     {
-        Debug.Log("getplayerbackpack");
         if (Instance == null)
         {
             Debug.Log("null playerbackpack");
         }
         if (Instance.playerBackpack == null)
         {
-            Debug.Log("creating new backpack");
             Instance.playerBackpack = new Inventory();
         }
         return Instance.playerBackpack;

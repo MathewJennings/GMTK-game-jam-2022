@@ -25,13 +25,14 @@ public class MenuManager : MonoBehaviour
     private void OpenMenu(GameState gs)
     {
         defeatMenu.SetActive(gs == GameState.Defeat);
-        victoryMenu.SetActive(gs == GameState.RoomVictory);
-        if(gs==GameState.RoomVictory)
+        //must set inventory before victory menu opens
+        if (gs == GameState.RoomVictory)
         {
             PlayerUIInventory.SetInventory(PlayerController.playerInventory, PlayerController.playerBackpack);
             backpackUIInventory.SetInventory(PlayerController.playerBackpack, PlayerController.playerInventory);
             rewardInventory.GetComponent<UIInventory>().SetInventory(ItemAssets.Instance.rewardInventory, PlayerController.playerInventory);
         }
+        victoryMenu.SetActive(gs == GameState.RoomVictory);
     }
 
     // Start is called before the first frame update

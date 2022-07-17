@@ -81,7 +81,7 @@ public class SwordSwipe : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-        Debug.Log(completedRotation() + ": " + transform.localRotation.eulerAngles + " vs " + targetSwingRotation.eulerAngles);
+        //Debug.Log(completedRotation() + ": " + transform.localRotation.eulerAngles + " vs " + targetSwingRotation.eulerAngles);
     }
 
     private bool completedRotation()
