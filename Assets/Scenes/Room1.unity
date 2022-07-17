@@ -8630,6 +8630,14 @@ PrefabInstance:
       propertyPath: rewardItemType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 423135259160819273, guid: cf7ef457c26b8cc47bd62ac51462121e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 423135259160819273, guid: cf7ef457c26b8cc47bd62ac51462121e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.76
+      objectReference: {fileID: 0}
     - target: {fileID: 1869437941307325168, guid: cf7ef457c26b8cc47bd62ac51462121e, type: 3}
       propertyPath: m_Name
       value: Level Managers
@@ -8678,6 +8686,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1869437941438354690, guid: cf7ef457c26b8cc47bd62ac51462121e, type: 3}
+      propertyPath: diceSpawnPoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1869437941553595957, guid: cf7ef457c26b8cc47bd62ac51462121e, type: 3}
       propertyPath: defeatMenu
       value: 
@@ -8702,6 +8714,14 @@ PrefabInstance:
       propertyPath: backpackUIInventory
       value: 
       objectReference: {fileID: 1543045860}
+    - target: {fileID: 4038463358666212058, guid: cf7ef457c26b8cc47bd62ac51462121e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7676212978625180677, guid: cf7ef457c26b8cc47bd62ac51462121e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: cf7ef457c26b8cc47bd62ac51462121e, type: 3}
