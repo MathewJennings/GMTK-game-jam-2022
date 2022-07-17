@@ -20,17 +20,12 @@ public class CheckDiceSide : MonoBehaviour {
     }
 
     void OnTriggerStay (Collider other) {
-        if (other.TryGetComponent<DiceSide>(out DiceSide sideThatIsDown)) {
+        if (other.TryGetComponent(out DiceSide sideThatIsDown)) {
             if(sideThatIsDown.transform.parent.gameObject != diceWhoseRollCompleted) {
                 return;
             }
-            GameObject sideThatIsUp = sideThatIsDown.oppositeSide;
-            var up = sideThatIsUp.GetComponent<DiceSide> ();
-            var swipeAngle = up.swipeAngleDegrees;
-            var swipeSize = up.swipeScale;
-            var swipeDamage = up.swipeDamage;
-
-            player.GetComponent<PlayerAttackController>().Swipe(swipeAngle, swipeSize, swipeDamage);
+            DiceSide sideThatIsUp = sideThatIsDown.oppositeSide.GetComponent<DiceSide>();
+            player.GetComponent<PlayerAttackController>().Swipe(diceWhoseRollCompleted, sideThatIsUp);
             diceWhoseRollCompleted = null;
         }
     }

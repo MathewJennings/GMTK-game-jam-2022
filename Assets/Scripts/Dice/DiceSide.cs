@@ -7,5 +7,6 @@ public class DiceSide : MonoBehaviour {
     public GameObject oppositeSide;
     public float swipeAngleDegrees;
     public float swipeScale;
+    public float swipeTimeInSeconds;
     public int swipeDamage;
 }

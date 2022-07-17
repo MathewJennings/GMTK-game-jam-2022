@@ -5,23 +5,16 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttackController : MonoBehaviour
 {
-    public Transform playerPosition;
-    public GameObject myDie;
-    public static Object prefab;
+    public static Object swordPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        prefab = Resources.Load("Sword");
+        swordPrefab = Resources.Load("Sword");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Swipe(GameObject attackingDice, DiceSide attackingDiceSide)
     {
-    }
-
-    public void Swipe(float swipeAngle, float swipeSize, int swipeDamage)
-    {
-        SwordSwipe.Create(prefab, swipeAngle, swipeSize, .4f, swipeDamage, myDie, playerPosition);
+        SwordSwipe.Create(swordPrefab, attackingDice, attackingDiceSide);
     }
 }
