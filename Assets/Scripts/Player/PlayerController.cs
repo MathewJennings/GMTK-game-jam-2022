@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour {
 
     [SerializeField] float initialSpeed;
+    public Inventory playerInventory;
+    public Inventory playerBackpack;
     float currentSpeed;
     Vector2 movement;
     Rigidbody2D rigidBody;
@@ -13,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     public int MAX_HEALTH = 5;
     public PlayerHealth playerHealth;
     public PlayerAttackController playerAttackController;
+
 
     private void Awake () {
         rigidBody = GetComponent<Rigidbody2D> ();
@@ -44,6 +47,9 @@ public class PlayerController : MonoBehaviour {
         currentSpeed = initialSpeed;
         transform.position = GameObject.FindGameObjectWithTag("PlayerSpawnPoint").transform.position;
         GetComponent<Transform>().rotation = Quaternion.Euler(0.0f, 0.0f, 0);
+        playerInventory = new Inventory();
+        playerInventory.AddItem(new Item { itemType = Item.ItemType.SwordDice });
+        playerBackpack = new Inventory();
     }
 
     private void FixedUpdate () {
