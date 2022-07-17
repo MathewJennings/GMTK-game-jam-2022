@@ -25,11 +25,12 @@ public class DiceDragManager : MonoBehaviour {
     private Camera mainCamera;
     private GameObject diceThatIsBeingHovered;
     private GameObject diceThatIsDragging;
-    private GameObject diceThatIsResolving;
+    private List<GameObject> diceThatAreResolving;
     private WaitForFixedUpdate waitforFixedUpdate = new WaitForFixedUpdate ();
 
     private void Awake () {
         mainCamera = Camera.main;
+        diceThatAreResolving = new List<GameObject>();
     }
 
     private void OnEnable () {
@@ -87,7 +88,7 @@ public class DiceDragManager : MonoBehaviour {
             float dirZ = Random.Range(0, 500);
             rigidbody.AddForce(UP * 500);
             rigidbody.AddTorque(dirX, dirY, dirZ);
-            diceThatIsResolving = diceThatIsDragging;
+            diceThatAreResolving.Add(diceThatIsDragging);
             diceThatIsDragging = null;
             endHover();
         }
@@ -98,14 +99,18 @@ public class DiceDragManager : MonoBehaviour {
         tryDiceHover ();
     }
 
-    private void tryResolveDiceRoll () {
-        if (diceThatIsResolving != null) {
-            Vector3 diceVelocity = diceThatIsResolving.GetComponent<Rigidbody> ().velocity;
+    private void tryResolveDiceRoll ()
+    {
+        //Debug.Log("diceThatAreResolving " + diceThatAreResolving);
+        List<bool> toBeRemoved = new List<bool>();
+        for(int i = diceThatAreResolving.Count-1; i >= 0; i--) {
+            var dieThatIsResolving = diceThatAreResolving[i];
+            Vector3 diceVelocity = dieThatIsResolving.GetComponent<Rigidbody> ().velocity;
             if (diceVelocity.magnitude < diceStopRollMaxVelocity) {
                 if (diceRollCompleted != null) {
-                    diceRollCompleted (diceThatIsResolving);
+                    diceRollCompleted (dieThatIsResolving);
                 }
-                diceThatIsResolving = null;
+                diceThatAreResolving.Remove(dieThatIsResolving);
             }
         }
     }
