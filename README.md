@@ -89,4 +89,16 @@ Second sprint:
         second room twice as big, 2 enemies
         add endgame menu
         update reward/defeat menus
-    
+
+Third sprint:
+    UI with mouse and keyboard, welcome screen
+    If wake up early enough, teleport die
+        every side is exactly the same
+    Add dice spawn positions
+    Craft a story for 6 levels
+        1: basic die (TUTORIAL)
+        2: 1 basic die (wider level, enemy behaviors, direction of die. Locks die in bottom corner)
+        3: spin die, enemies circling around you (intro to dice management, intro to spin attack)
+        4: Teleport die puzzle room (intro to teleport)
+        5: Some combat room - teleporting enemies (skill check)
+        6: big enemy room, no knock back (skill check)
