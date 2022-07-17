@@ -60,10 +60,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 2024199154}
-  swipeAngleDegrees: 120
+  swipeAngleDegrees: 180
   swipeScale: 1
   swipeTimeInSeconds: 0.3
-  swipeDamage: 3
+  swipeDamage: 1
 --- !u!1 &444259735
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,9 +125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 1107398328}
   swipeAngleDegrees: 180
-  swipeScale: 2
-  swipeTimeInSeconds: 0.4
-  swipeDamage: 3
+  swipeScale: 1
+  swipeTimeInSeconds: 0.3
+  swipeDamage: 1
 --- !u!1 &728005105
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,10 +188,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 880551567}
-  swipeAngleDegrees: 120
+  swipeAngleDegrees: 180
   swipeScale: 1
   swipeTimeInSeconds: 0.3
-  swipeDamage: 2
+  swipeDamage: 1
 --- !u!1 &880551567
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,10 +252,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 728005105}
-  swipeAngleDegrees: 120
+  swipeAngleDegrees: 180
   swipeScale: 1
   swipeTimeInSeconds: 0.3
-  swipeDamage: 2
+  swipeDamage: 1
 --- !u!1 &1107398328
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,9 +316,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 444259735}
-  swipeAngleDegrees: 60
-  swipeScale: 0.5
-  swipeTimeInSeconds: 0.2
+  swipeAngleDegrees: 179
+  swipeScale: 1
+  swipeTimeInSeconds: 0.3
   swipeDamage: 1
 --- !u!1 &2024199154
 GameObject:
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 338020113}
-  swipeAngleDegrees: 120
+  swipeAngleDegrees: 180
   swipeScale: 1
   swipeTimeInSeconds: 0.3
   swipeDamage: 1
@@ -457,7 +457,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 1004382764, guid: aa23957836ed423428beb40e68c16ee8, type: 3}
+  m_Sprite: {fileID: 1788974090, guid: e283434fffcfe874e8b53f55a6da9412, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -541,7 +541,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 116315615, guid: aa23957836ed423428beb40e68c16ee8, type: 3}
+  m_Sprite: {fileID: -1048398943, guid: e283434fffcfe874e8b53f55a6da9412, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -625,7 +625,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 567275497, guid: aa23957836ed423428beb40e68c16ee8, type: 3}
+  m_Sprite: {fileID: -19509690, guid: e283434fffcfe874e8b53f55a6da9412, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -709,7 +709,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: -1445861105, guid: aa23957836ed423428beb40e68c16ee8, type: 3}
+  m_Sprite: {fileID: 622823255, guid: e283434fffcfe874e8b53f55a6da9412, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -793,7 +793,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 1681105465, guid: aa23957836ed423428beb40e68c16ee8, type: 3}
+  m_Sprite: {fileID: -1310159739, guid: e283434fffcfe874e8b53f55a6da9412, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -817,7 +817,7 @@ GameObject:
   - component: {fileID: 193864117}
   - component: {fileID: 1542041158644313747}
   m_Layer: 0
-  m_Name: Dice
+  m_Name: Spin Dice
   m_TagString: Dice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1043,7 +1043,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 373760886, guid: aa23957836ed423428beb40e68c16ee8, type: 3}
+  m_Sprite: {fileID: 1521945537, guid: e283434fffcfe874e8b53f55a6da9412, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

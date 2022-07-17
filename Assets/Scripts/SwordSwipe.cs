@@ -50,8 +50,10 @@ public class SwordSwipe : MonoBehaviour
 
         initialSwingRotation = transform.rotation;
         initialSwingRotation = new Quaternion(initialSwingRotation.x, initialSwingRotation.y, initialSwingRotation.z, initialSwingRotation.w);
+        Debug.Log("initial: " + initialSwingRotation.eulerAngles);
         targetSwingRotation = new Quaternion(initialSwingRotation.x, initialSwingRotation.y, initialSwingRotation.z, initialSwingRotation.w);
         targetSwingRotation *= Quaternion.Euler(0, 0, -swipeAngleDegrees); // the target rotation is an additional swipeAngle degrees clockwise from the starting angle
+        Debug.Log("target: " + targetSwingRotation.eulerAngles);
     }
 
     void Update()

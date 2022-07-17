@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aa23957836ed423428beb40e68c16ee8
+guid: e283434fffcfe874e8b53f55a6da9412
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -154,7 +154,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: swordDice_0
+      name: spinSwordDice_0
       rect:
         serializedVersion: 2
         x: 0
@@ -168,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 102a6ba437ba54d409579b921fb9dc96
-      internalID: -1445861105
+      spriteID: e00f0e98701af814aa5edb07c33ba661
+      internalID: 622823255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swordDice_1
+      name: spinSwordDice_1
       rect:
         serializedVersion: 2
         x: 500
@@ -189,14 +189,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f195c8c98834b1941aed8fedfdb5065b
-      internalID: 1681105465
+      spriteID: 62bcefc31ea0ad147b3efa4f1ef35682
+      internalID: -1310159739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swordDice_2
+      name: spinSwordDice_2
       rect:
         serializedVersion: 2
         x: 1000
@@ -210,14 +210,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a219cb63d386ba344b623b817d0c6d47
-      internalID: 1004382764
+      spriteID: 29ceef8ff01e10649b7ff487239e8c09
+      internalID: 1788974090
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swordDice_3
+      name: spinSwordDice_3
       rect:
         serializedVersion: 2
         x: 0
@@ -231,14 +231,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09f61b87659b9a24298d14915ca04644
-      internalID: 567275497
+      spriteID: 99fe80b7538dd95459727bdf72d40332
+      internalID: -19509690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swordDice_4
+      name: spinSwordDice_4
       rect:
         serializedVersion: 2
         x: 500
@@ -252,14 +252,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b29699effdb6a34ead9fb2d8d1365f0
-      internalID: 373760886
+      spriteID: 8f371d8fd143abf45a1b502b55e7081d
+      internalID: 1521945537
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swordDice_5
+      name: spinSwordDice_5
       rect:
         serializedVersion: 2
         x: 1000
@@ -273,8 +273,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 300d933806336b24591e070f96e527ad
-      internalID: 116315615
+      spriteID: 0e68e8d505a06164191ff342c4f80d00
+      internalID: -1048398943
       vertices: []
       indices: 
       edges: []
@@ -282,7 +282,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: bc24598659e09e44e8e4a374ff410ca3
+    spriteID: ae596027474ac5149bcfc57935f8b0f6
     internalID: 0
     vertices: []
     indices: 
@@ -290,12 +290,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      swordDice_5: 116315615
-      swordDice_1: 1681105465
-      swordDice_0: -1445861105
-      swordDice_2: 1004382764
-      swordDice_3: 567275497
-      swordDice_4: 373760886
+      spinSwordDice_3: -19509690
+      spinSwordDice_4: 1521945537
+      spinSwordDice_1: -1310159739
+      spinSwordDice_0: 622823255
+      spinSwordDice_2: 1788974090
+      spinSwordDice_5: -1048398943
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
