@@ -1044,6 +1044,14 @@ PrefabInstance:
       propertyPath: disableGameObjectsOnRoomVictory.Array.data[0]
       value: 
       objectReference: {fileID: 1062012285}
+    - target: {fileID: 258349184802128361, guid: cf7ef457c26b8cc47bd62ac51462121e, type: 3}
+      propertyPath: itemType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 258349184802128361, guid: cf7ef457c26b8cc47bd62ac51462121e, type: 3}
+      propertyPath: rewardItemType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1869437941307325168, guid: cf7ef457c26b8cc47bd62ac51462121e, type: 3}
       propertyPath: m_Name
       value: Level Managers

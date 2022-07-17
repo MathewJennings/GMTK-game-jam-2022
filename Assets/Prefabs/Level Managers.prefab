@@ -145,7 +145,8 @@ MonoBehaviour:
   rewardInventory: {fileID: 0}
   victoryMenu: {fileID: 0}
   defeatMenu: {fileID: 0}
-  uIInventory: {fileID: 0}
+  PlayerUIInventory: {fileID: 0}
+  backpackUIInventory: {fileID: 0}
 --- !u!1 &1869437941944676962
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,3 +256,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swordDieSprite: {fileID: 21300000, guid: 7a27966d48741c14bbbdb89a30bb7ba8, type: 3}
   spinSwordDieSprite: {fileID: 21300000, guid: b4872a376e426f84689ec60a30e7b711, type: 3}
+  teleportDieSprite: {fileID: 21300000, guid: bd40407be0526b94f9dea5988191250b, type: 3}

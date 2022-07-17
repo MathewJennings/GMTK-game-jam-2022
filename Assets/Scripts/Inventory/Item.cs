@@ -6,8 +6,10 @@ public class Item
 {
     public enum ItemType
     {
+        None,
         SwordDice,
-        SpinSwordDice
+        SpinSwordDice,
+        TeleportDice
     }
 
     public ItemType itemType;
@@ -19,6 +21,7 @@ public class Item
             default:
             case ItemType.SwordDice: return ItemAssets.Instance.swordDieSprite;
             case ItemType.SpinSwordDice: return ItemAssets.Instance.spinSwordDieSprite;
+            case ItemType.TeleportDice: return ItemAssets.Instance.teleportDieSprite;
         }
     }
     public string GetPrefabPath()
@@ -28,6 +31,7 @@ public class Item
             default:
             case ItemType.SwordDice: return "Attack Dice";
             case ItemType.SpinSwordDice: return "Spin Dice";
+            case ItemType.TeleportDice: return "Teleport Dice";
         }
     }
 }

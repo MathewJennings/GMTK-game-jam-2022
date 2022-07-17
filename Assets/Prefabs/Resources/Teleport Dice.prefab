@@ -818,7 +818,7 @@ GameObject:
   - component: {fileID: 1542041158644313747}
   - component: {fileID: 8505973832676406941}
   m_Layer: 0
-  m_Name: Teleport Die
+  m_Name: Teleport Dice
   m_TagString: Dice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
