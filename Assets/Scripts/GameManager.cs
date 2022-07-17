@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public List<Transform> diceSpawnPoints;
 
 
+    private List<GameObject> spawnedDice;
     private List<GameObject> enemiesInLevel;
 
     private void Awake()
@@ -17,15 +18,16 @@ public class GameManager : MonoBehaviour
         Instance = this;
         enemiesInLevel = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
 
-        List<Item> dice = PlayerPersistedState.Instance.getPlayerInventory().getItems();
-        for(int i = 0; i < dice.Count; i++)
+        List<Item> inventoryDice = PlayerPersistedState.Instance.getPlayerInventory().getItems();
+        spawnedDice = new List<GameObject>(inventoryDice.Count);
+        for (int i = 0; i < inventoryDice.Count; i++)
         {
-            var die = dice[i];
-            Object diePrefab = Resources.Load(die.GetPrefabPath());
+            var inventoryDie = inventoryDice[i];
+            Object diePrefab = Resources.Load(inventoryDie.GetPrefabPath());
             var currentSpawnPoint = diceSpawnPoints[i % diceSpawnPoints.Count];
             //always spawn at z = -1;
             Vector3 dieInitialSpawnPoint = new Vector3(currentSpawnPoint.position.x, currentSpawnPoint.position.y, -1);
-            Instantiate(diePrefab, dieInitialSpawnPoint, Quaternion.identity, currentSpawnPoint);
+            spawnedDice.Add(Instantiate(diePrefab, dieInitialSpawnPoint, Quaternion.identity, currentSpawnPoint) as GameObject);
         }
     }
 
@@ -68,8 +70,15 @@ public class GameManager : MonoBehaviour
 
     public void logEnemyDeath(GameObject enemy)
     {
-        enemiesInLevel.Remove(enemy);
-        if (enemiesInLevel.Count == 0)
+        int livingEnemiesInLevel = 0;
+        foreach(GameObject currentEnemy in enemiesInLevel)
+        {
+            if (currentEnemy.activeSelf)
+            {
+                livingEnemiesInLevel++;
+            }
+        }
+        if (livingEnemiesInLevel == 0)
         {
             UpdateGameState(GameState.RoomVictory);
         }
@@ -77,6 +86,15 @@ public class GameManager : MonoBehaviour
 
     public void restartGame()
     {
+        for (int i = 0; i < diceSpawnPoints.Count; i++)
+        {
+            spawnedDice[i].transform.position = diceSpawnPoints[i].position;
+            spawnedDice[i].transform.rotation= diceSpawnPoints[i].rotation;
+        }
+        foreach (GameObject enemy in enemiesInLevel)
+        {
+            enemy.SetActive(true);
+        }
         UpdateGameState(GameState.SetupGame);
     }
 

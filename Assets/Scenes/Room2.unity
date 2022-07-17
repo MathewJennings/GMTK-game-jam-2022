@@ -1818,6 +1818,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 607860243439697200, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1047104692}
+    - target: {fileID: 607860243439697200, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: restartGame
+      objectReference: {fileID: 0}
     - target: {fileID: 831500552981932710, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.51
