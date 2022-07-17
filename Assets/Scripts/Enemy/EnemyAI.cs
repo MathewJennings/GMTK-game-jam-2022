@@ -67,6 +67,9 @@ public class EnemyAI : MonoBehaviour {
     private void FixedUpdate () {
         switch (currentState)
         {
+            case EnemyState.HoldPosition:
+                holdPosition();
+                break;
             case EnemyState.Idling:
                 returnToInitialSpawnPoint();
                 break;
@@ -77,6 +80,11 @@ public class EnemyAI : MonoBehaviour {
                 chasePlayer();
                 break;
         }
+    }
+
+    private void holdPosition()
+    {
+        rigidBody.velocity = Vector2.zero;
     }
     private void returnToInitialSpawnPoint()
     {
@@ -120,5 +128,6 @@ public enum EnemyState
 {
     Idling,
     Patroling,
-    Chasing
+    Chasing,
+    HoldPosition
 }
