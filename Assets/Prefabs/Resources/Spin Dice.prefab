@@ -816,6 +816,7 @@ GameObject:
   - component: {fileID: 193864118}
   - component: {fileID: 193864117}
   - component: {fileID: 1542041158644313747}
+  - component: {fileID: 1333859057364621109}
   m_Layer: 0
   m_Name: Spin Dice
   m_TagString: Dice
@@ -887,6 +888,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 0.9882353, g: 1, b: 0.7607843, a: 1}
+--- !u!114 &1333859057364621109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4691256118945542106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151679a838c633c478df1d46c7d1d6c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dieType: 0
 --- !u!1 &4900449501542660056
 GameObject:
   m_ObjectHideFlags: 0

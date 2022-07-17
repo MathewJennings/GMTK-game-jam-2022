@@ -101,7 +101,6 @@ public class DiceDragManager : MonoBehaviour {
 
     private void tryResolveDiceRoll ()
     {
-        //Debug.Log("diceThatAreResolving " + diceThatAreResolving);
         List<bool> toBeRemoved = new List<bool>();
         for(int i = diceThatAreResolving.Count-1; i >= 0; i--) {
             var dieThatIsResolving = diceThatAreResolving[i];

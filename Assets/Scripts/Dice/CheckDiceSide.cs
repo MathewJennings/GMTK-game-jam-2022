@@ -25,7 +25,7 @@ public class CheckDiceSide : MonoBehaviour {
                 return;
             }
             DiceSide sideThatIsUp = sideThatIsDown.oppositeSide.GetComponent<DiceSide>();
-            player.GetComponent<PlayerAttackController>().Swipe(diceWhoseRollCompleted, sideThatIsUp);
+            player.GetComponent<PlayerAttackController>().Attack(diceWhoseRollCompleted, sideThatIsUp);
             diceWhoseRollCompleted = null;
         }
     }
