@@ -561,6 +561,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Attack Dice
       objectReference: {fileID: 0}
+    - target: {fileID: 4691256118945542106, guid: ec802dec104837f489714fa0d13745f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5355167230429508960, guid: ec802dec104837f489714fa0d13745f9, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -619,6 +623,10 @@ PrefabInstance:
     - target: {fileID: 4691256118945542106, guid: cd4a97ebc95d404498454dfc3c3233f5, type: 3}
       propertyPath: m_Name
       value: Spin Dice
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691256118945542106, guid: cd4a97ebc95d404498454dfc3c3233f5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5355167230429508960, guid: cd4a97ebc95d404498454dfc3c3233f5, type: 3}
       propertyPath: m_RootOrder
@@ -742,6 +750,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1406325417}
+    - target: {fileID: 883230603168442696, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3274472531851420027, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
       propertyPath: m_Size.x
       value: 24

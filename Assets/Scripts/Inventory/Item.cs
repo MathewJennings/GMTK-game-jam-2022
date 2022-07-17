@@ -21,4 +21,13 @@ public class Item
             case ItemType.SpinSwordDice: return ItemAssets.Instance.spinSwordDieSprite;
         }
     }
+    public string GetPrefabPath()
+    {
+        switch (itemType)
+        {
+            default:
+            case ItemType.SwordDice: return "Attack Dice";
+            case ItemType.SpinSwordDice: return "Spin Dice";
+        }
+    }
 }
