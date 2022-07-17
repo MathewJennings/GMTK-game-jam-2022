@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8443,7 +8443,7 @@ PrefabInstance:
       objectReference: {fileID: 64717446}
     - target: {fileID: 7973018410621091511, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
       propertyPath: nameOfLevelToTrigger
-      value: Room2
+      value: Room1-2
       objectReference: {fileID: 0}
     - target: {fileID: 9182080471006810787, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
       propertyPath: m_RootOrder
