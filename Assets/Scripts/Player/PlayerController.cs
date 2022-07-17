@@ -19,18 +19,23 @@ public class PlayerController : MonoBehaviour {
 
     private void Awake () {
         rigidBody = GetComponent<Rigidbody2D> ();
-        GameManager.OnGameStateChange += RestartTrigger;
         Restart();
     }
-    private void OnDestroy()
+
+    private void OnEnable()
     {
-        GameManager.OnGameStateChange -= RestartTrigger;
+        GameManager.OnGameStateChange += OnGameStateChange;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnGameStateChange -= OnGameStateChange;
     }
 
 
-    private void RestartTrigger(GameState gs)
+    private void OnGameStateChange(GameState newGameState)
     {
-        if(gs == GameState.SetupGame)
+        if(newGameState == GameState.SetupGame)
         {
             Restart();
         }
@@ -40,6 +45,7 @@ public class PlayerController : MonoBehaviour {
         SetHealth(MAX_HEALTH);
         playerHealth.numOfHearts = MAX_HEALTH;
         currentSpeed = initialSpeed;
+        transform.position = GameObject.FindGameObjectWithTag("PlayerSpawnPoint").transform.position;
         GetComponent<Transform>().rotation = Quaternion.Euler(0.0f, 0.0f, 0);
         playerInventory = new Inventory();
         playerInventory.AddItem(new Item { itemType = Item.ItemType.SwordDice });

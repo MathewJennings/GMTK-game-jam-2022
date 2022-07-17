@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameStateListener : MonoBehaviour
+public class GlobalGameStateListener : MonoBehaviour
 {
 
     [SerializeField]
@@ -23,15 +23,16 @@ public class GameStateListener : MonoBehaviour
 
     private void respondToGameStateChange(GameState newGameState)
     {
-        if (newGameState == GameState.RoomVictory)
+        switch(newGameState)
         {
-            enableAndDisableGameObjects();
+            case GameState.ProceedingToNextLevel:
+                enableAndDisableGameObjects();
+                break;
         }
     }
 
     private void enableAndDisableGameObjects()
     {
-        Debug.Log("enableAndDisableGameObjects");
         foreach(GameObject toEnable in enableGameObjectsOnRoomVictory)
         {
             toEnable.SetActive(true);

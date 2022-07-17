@@ -9,7 +9,7 @@ public class EnemyCollision : MonoBehaviour
         //todo change this to weapon or something that
         if (other.CompareTag("Player"))
         {
-            // GetComponent<EnemyState>().TakeDamage(other.transform, 1);
+            // GetComponent<EnemyHealth>().TakeDamage(other.transform, 1);
         }
     }
 }

@@ -7,10 +7,13 @@ public class PlayerCollision : MonoBehaviour {
     [SerializeField]
     float knockBackForce;
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("Enemy")) {
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject collidedWith = collision.gameObject;
+        if (collidedWith.CompareTag("Enemy"))
+        {
             GetComponent<PlayerController>().TakeDamage();
-            GetKnockedBack(other.gameObject);
+            GetKnockedBack(collidedWith);
         }
     }
 
