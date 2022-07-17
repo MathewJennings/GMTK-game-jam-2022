@@ -16,8 +16,10 @@ public class PlayerController : MonoBehaviour {
     public PlayerHealth playerHealth;
     public PlayerAttackController playerAttackController;
 
+    private PlayerPersistedState playerPersistedState;
 
     private void Awake () {
+        playerPersistedState = PlayerPersistedState.Instance;
         rigidBody = GetComponent<Rigidbody2D> ();
         Restart();
     }
@@ -47,15 +49,13 @@ public class PlayerController : MonoBehaviour {
         currentSpeed = initialSpeed;
         transform.position = GameObject.FindGameObjectWithTag("PlayerSpawnPoint").transform.position;
         GetComponent<Transform>().rotation = Quaternion.Euler(0.0f, 0.0f, 0);
-        playerInventory = new Inventory();
-        playerInventory.AddItem(new Item { itemType = Item.ItemType.SwordDice });
-        playerBackpack = new Inventory();
+        playerInventory = playerPersistedState.getPlayerInventory();
+        playerBackpack = playerPersistedState.getPlayerBackpack();
     }
 
     private void FixedUpdate () {
         rigidBody.velocity = movement * currentSpeed;
     }
-
     public void OnMovement (InputAction.CallbackContext context) {
         movement = context.ReadValue<Vector2> ();
     }
@@ -76,7 +76,6 @@ public class PlayerController : MonoBehaviour {
     {
         currentSpeed = 0;
         GetComponent<Transform>().Rotate(0.0f, 0.0f, 90.0f, Space.Self);
-        //await System.Threading.Tasks.Task.Delay(1000);
         GameManager.Instance.UpdateGameState(GameState.Defeat);
     }
 }

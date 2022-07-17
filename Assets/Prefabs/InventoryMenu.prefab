@@ -594,12 +594,12 @@ RectTransform:
   m_Children:
   - {fileID: 3020073474313587153}
   - {fileID: 3020073472925735870}
-  m_Father: {fileID: 3020073474659777063}
+  m_Father: {fileID: 3020073473090551405}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0.000045776367}
   m_SizeDelta: {x: 72.7587, y: 72.7587}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &3020073473001983225
@@ -717,6 +717,7 @@ RectTransform:
   - {fileID: 3020073473047368932}
   - {fileID: 3020073473237717667}
   - {fileID: 3020073474659777063}
+  - {fileID: 3020073473001983227}
   m_Father: {fileID: 3020073473833428550}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -775,8 +776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac8daf9497a3664d982e7de2c88ff05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSlotContainer: {fileID: 3020073474659777063}
-  itemSlotTemplate: {fileID: 3020073473001983227}
   numSlots: 3
 --- !u!1 &3020073473237717692
 GameObject:
@@ -1244,8 +1243,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3020073473001983227}
+  m_Children: []
   m_Father: {fileID: 3020073473090551405}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
