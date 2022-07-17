@@ -69,8 +69,8 @@ public class EnemyHealth : MonoBehaviour
     public void Die()
     {
         enemyAI.SetState(EnemyState.Idling);
+        this.gameObject.SetActive(false);
         GameManager.Instance.logEnemyDeath(this.gameObject);
-        Destroy(this.gameObject);
     }
 
     private void PushAway(Transform t)
