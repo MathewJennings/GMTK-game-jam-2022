@@ -18,6 +18,8 @@ public class SwordSwipe : MonoBehaviour
 
     private float spriteOffset = 45.0f; //the sword sprite is at a 45 degree angle
 
+    private HashSet<GameObject> enemiesHit = new HashSet<GameObject>();
+
     private static float INTERMEDIATE_ANGLES = 179f;
 
     public static void Create(Object prefab, GameObject attackingDie, DiceSide attackingDiceSide)
@@ -81,7 +83,6 @@ public class SwordSwipe : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-        //Debug.Log(completedRotation() + ": " + transform.localRotation.eulerAngles + " vs " + targetSwingRotation.eulerAngles);
     }
 
     private bool completedRotation()
@@ -108,7 +109,13 @@ public class SwordSwipe : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            GameObject enemyGameObject = other.gameObject;
+            if (enemiesHit.Contains(enemyGameObject))
+            {
+                return;
+            }
             other.GetComponent<EnemyHealth>().TakeDamage(this.transform, swipeDamage);
+            enemiesHit.Add(enemyGameObject);
         }
     }
 }
