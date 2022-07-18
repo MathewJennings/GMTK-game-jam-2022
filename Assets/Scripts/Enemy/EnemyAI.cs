@@ -111,7 +111,7 @@ public class EnemyAI : MonoBehaviour {
     {
         Vector3 vectorToPosition = position - transform.position;
         float distanceToPosition = vectorToPosition.magnitude;
-        if (distanceToPosition > 0.01f)
+        if (distanceToPosition > 0.03f)
         {
             Vector2 direction = vectorToPosition / distanceToPosition;
             rigidBody.velocity = direction * movementSpeed;

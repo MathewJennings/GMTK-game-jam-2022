@@ -221,7 +221,7 @@ PrefabInstance:
       objectReference: {fileID: 1650366729}
     - target: {fileID: 5572064280261448353, guid: d3003cc1c604126438006cc5785f73d2, type: 3}
       propertyPath: enemyMaxHealth
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6831429696374664497, guid: d3003cc1c604126438006cc5785f73d2, type: 3}
       propertyPath: m_RootOrder
@@ -423,6 +423,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melee Enemy 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7770168242400850405, guid: 6cef81b7636a49046af4a8a26c2df44c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1491005860, guid: e1d21b89722f54c43a33432396220cc0, type: 3}
     - target: {fileID: 7770168242400850406, guid: 6cef81b7636a49046af4a8a26c2df44c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -574,7 +578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 258349184802128361, guid: cf7ef457c26b8cc47bd62ac51462121e, type: 3}
       propertyPath: rewardItemType
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 423135259160819273, guid: cf7ef457c26b8cc47bd62ac51462121e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25092,7 +25096,7 @@ PrefabInstance:
       objectReference: {fileID: 1924398524}
     - target: {fileID: 7973018410621091511, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
       propertyPath: nameOfLevelToTrigger
-      value: Room6
+      value: Room4
       objectReference: {fileID: 0}
     - target: {fileID: 9182080471006810787, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
       propertyPath: m_RootOrder
