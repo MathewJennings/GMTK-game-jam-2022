@@ -23,8 +23,7 @@ public class PlayerAttackController : MonoBehaviour
         switch (dieType)
         {
             case DieType.SwordDie:
-                SwordSwipe.Create(attackPrefabs[0], attackingDice, attackingDiceSide);
-                GameObject.FindGameObjectWithTag("MusicManager").GetComponent<AudioSource>().PlayOneShot(swipeSound, 0.5f);
+                SwordSwipe.Create(attackPrefabs[0], attackingDice, attackingDiceSide, swipeSound);
                 break;
             case DieType.TeleportDie:
                 Teleport.ExecuteTeleport(attackingDice, attackingDiceSide);

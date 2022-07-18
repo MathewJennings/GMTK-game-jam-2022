@@ -22,8 +22,13 @@ public class SwordSwipe : MonoBehaviour
 
     private static float INTERMEDIATE_ANGLES = 179f;
 
-    public static void Create(Object prefab, GameObject attackingDie, DiceSide attackingDiceSide)
+    public static void Create(Object prefab, GameObject attackingDie, DiceSide attackingDiceSide, AudioClip swipeSound)
     {
+        if (attackingDiceSide.swipeTimeInSeconds == 0f)
+        {
+            // Bad luck for the player, this side is a dud!
+            return;
+        }
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject newGameObject = Instantiate(prefab, Vector3.zero, Quaternion.identity, player.transform) as GameObject;
         SwordSwipe newSwordSwipe = newGameObject.GetComponent<SwordSwipe>();
@@ -37,6 +42,8 @@ public class SwordSwipe : MonoBehaviour
         
         newSwordSwipe.transform.localScale = newSwordSwipe.transform.localScale * newSwordSwipe.swipeScale;
         newSwordSwipe.setInitialRotation();
+
+        GameObject.FindGameObjectWithTag("MusicManager").GetComponent<AudioSource>().PlayOneShot(swipeSound, 0.5f);
     }
 
     private void setInitialRotation()

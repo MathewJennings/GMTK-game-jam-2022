@@ -124,10 +124,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 1107398328}
-  swipeAngleDegrees: 360
-  swipeScale: 1
-  swipeTimeInSeconds: 0.25
-  swipeDamage: 1
+  swipeAngleDegrees: 0
+  swipeScale: 0
+  swipeTimeInSeconds: 0
+  swipeDamage: 0
 --- !u!1 &728005105
 GameObject:
   m_ObjectHideFlags: 0
