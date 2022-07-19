@@ -83,7 +83,8 @@ public class GameManager : MonoBehaviour
 
     public void restartGame()
     {
-        for (int i = 0; i < diceSpawnPoints.Count; i++)
+        List<Item> inventoryDice = PlayerPersistedState.Instance.getPlayerInventory().getItems();
+        for (int i = 0; i < System.Math.Min(diceSpawnPoints.Count, inventoryDice.Count); i++)
         {
             spawnedDice[i].transform.position = diceSpawnPoints[i].position;
             spawnedDice[i].transform.rotation= diceSpawnPoints[i].rotation;
