@@ -31,7 +31,7 @@ public class VictoryMenu : MonoBehaviour
         bool isRewardsEmpty = rewardInventoryUIInventory.inventory.getCount() == 0;
         if(isLastLevel)
         {
-            title.text = "Congratulations! You're dice-tacular!";
+            title.text = "You beat the game! Congratulations, You're dice-tacular!";
             subtitle.text = "Feel free to continue playing with your current die";
             PlayerPersistedState.Instance.isFreeplayMode = true;
         }
