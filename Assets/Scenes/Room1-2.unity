@@ -1852,6 +1852,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1760535040723431200, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1657389267}
+    - target: {fileID: 1760535040723431200, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: restartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760535040723431200, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760535040723431200, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3274472531676299145, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
       propertyPath: m_IsActive
       value: 0

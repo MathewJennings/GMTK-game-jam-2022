@@ -33,7 +33,6 @@ public class PlayerPersistedState : MonoBehaviour
             Instance.playerInventory = new Inventory();
             Instance.playerInventory.AddItem(new Item { itemType = Item.ItemType.SwordDice });
 
-            Instance.playerInventory.AddItem(new Item { itemType = Item.ItemType.SpinSwordDice });
         }
         return Instance.playerInventory;
     }
