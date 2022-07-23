@@ -60,10 +60,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 2024199154}
-  swipeAngleDegrees: 360
-  swipeScale: 1
+  swipeAngleDegrees: 720
+  swipeScale: 1.1
   swipeTimeInSeconds: 0.25
   swipeDamage: 1
+  knockBackForce: 5000
   ability: 1
 --- !u!1 &444259735
 GameObject:
@@ -129,6 +130,7 @@ MonoBehaviour:
   swipeScale: 0
   swipeTimeInSeconds: 0
   swipeDamage: 0
+  knockBackForce: 0
   ability: 0
 --- !u!1 &728005105
 GameObject:
@@ -190,10 +192,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 880551567}
-  swipeAngleDegrees: 360
-  swipeScale: 1
+  swipeAngleDegrees: 720
+  swipeScale: 1.1
   swipeTimeInSeconds: 0.25
   swipeDamage: 1
+  knockBackForce: 5000
   ability: 1
 --- !u!1 &880551567
 GameObject:
@@ -255,10 +258,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 728005105}
-  swipeAngleDegrees: 360
-  swipeScale: 1
+  swipeAngleDegrees: 720
+  swipeScale: 1.1
   swipeTimeInSeconds: 0.25
   swipeDamage: 1
+  knockBackForce: 5000
   ability: 1
 --- !u!1 &1107398328
 GameObject:
@@ -320,10 +324,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 444259735}
-  swipeAngleDegrees: 360
-  swipeScale: 1
+  swipeAngleDegrees: 720
+  swipeScale: 1.1
   swipeTimeInSeconds: 0.25
   swipeDamage: 1
+  knockBackForce: 5000
   ability: 1
 --- !u!1 &2024199154
 GameObject:
@@ -385,10 +390,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeSide: {fileID: 338020113}
-  swipeAngleDegrees: 360
-  swipeScale: 1
+  swipeAngleDegrees: 720
+  swipeScale: 1.1
   swipeTimeInSeconds: 0.25
   swipeDamage: 1
+  knockBackForce: 5000
   ability: 1
 --- !u!1 &55300294799590669
 GameObject:

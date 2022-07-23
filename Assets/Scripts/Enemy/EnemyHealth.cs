@@ -53,7 +53,6 @@ public class EnemyHealth : MonoBehaviour
         //todo set invuln timeout
         health -= damage;
         SetHealth(health);
-        PushAway(t);
     }
     public void SetHealth(int h)
     {
@@ -71,14 +70,5 @@ public class EnemyHealth : MonoBehaviour
         enemyAI.SetState(EnemyState.Idling);
         this.gameObject.SetActive(false);
         GameManager.Instance.logEnemyDeath(this.gameObject);
-    }
-
-    private void PushAway(Transform t)
-    {
-        // Calculate relative position from source to player. TODO CHANGE THIS TO CONTACT POINT
-        Vector3 dir = transform.position - t.position;
-        // And finally we add force in the direction of dir and multiply it by force. 
-        // TODO MAKE PUSHBACK AMOUNT A CONSTANT
-        GetComponent<Rigidbody2D>().AddForce(dir.normalized * 2500);
     }
 }

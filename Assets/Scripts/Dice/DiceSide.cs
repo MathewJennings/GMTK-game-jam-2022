@@ -9,6 +9,7 @@ public class DiceSide : MonoBehaviour {
     public float swipeScale;
     public float swipeTimeInSeconds;
     public int swipeDamage;
+    public int knockBackForce;
     public Ability ability;
 
     public enum Ability

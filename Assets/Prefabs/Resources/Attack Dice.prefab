@@ -64,6 +64,7 @@ MonoBehaviour:
   swipeScale: 1
   swipeTimeInSeconds: 0.3
   swipeDamage: 3
+  knockBackForce: 2500
   ability: 1
 --- !u!1 &444259735
 GameObject:
@@ -129,6 +130,7 @@ MonoBehaviour:
   swipeScale: 2
   swipeTimeInSeconds: 0.4
   swipeDamage: 3
+  knockBackForce: 2500
   ability: 1
 --- !u!1 &728005105
 GameObject:
@@ -194,6 +196,7 @@ MonoBehaviour:
   swipeScale: 1
   swipeTimeInSeconds: 0.3
   swipeDamage: 2
+  knockBackForce: 2500
   ability: 1
 --- !u!1 &880551567
 GameObject:
@@ -259,6 +262,7 @@ MonoBehaviour:
   swipeScale: 1
   swipeTimeInSeconds: 0.3
   swipeDamage: 2
+  knockBackForce: 2500
   ability: 1
 --- !u!1 &1107398328
 GameObject:
@@ -324,6 +328,7 @@ MonoBehaviour:
   swipeScale: 0.5
   swipeTimeInSeconds: 0.2
   swipeDamage: 1
+  knockBackForce: 2500
   ability: 1
 --- !u!1 &2024199154
 GameObject:
@@ -389,6 +394,7 @@ MonoBehaviour:
   swipeScale: 1
   swipeTimeInSeconds: 0.3
   swipeDamage: 1
+  knockBackForce: 2500
   ability: 1
 --- !u!1 &55300294799590669
 GameObject:

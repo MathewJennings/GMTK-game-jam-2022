@@ -9,6 +9,7 @@ public class SwordSwipe : MonoBehaviour
     private float swipeScale;
     private float swipeTimeInSeconds;
     private int swipeDamage;
+    private int knockBackForce;
     private GameObject attackDie;
 
     private float timePercentage = 0.0f;
@@ -33,6 +34,7 @@ public class SwordSwipe : MonoBehaviour
         newSwordSwipe.swipeScale = attackingDiceSide.swipeScale;
         newSwordSwipe.swipeTimeInSeconds = attackingDiceSide.swipeTimeInSeconds;
         newSwordSwipe.swipeDamage = attackingDiceSide.swipeDamage;
+        newSwordSwipe.knockBackForce = attackingDiceSide.knockBackForce;
         newSwordSwipe.attackDie = attackingDie;
         
         newSwordSwipe.transform.localScale = newSwordSwipe.transform.localScale * newSwordSwipe.swipeScale;
@@ -116,7 +118,12 @@ public class SwordSwipe : MonoBehaviour
             {
                 return;
             }
-            other.GetComponent<EnemyHealth>().TakeDamage(this.transform, swipeDamage);
+
+            enemyGameObject.GetComponent<EnemyHealth>().TakeDamage(this.transform, swipeDamage);
+
+            Vector3 knockbackDirection = enemyGameObject.transform.position - transform.position;
+            enemyGameObject.GetComponent<Rigidbody2D>().AddForce(knockbackDirection.normalized * knockBackForce);
+
             enemiesHit.Add(enemyGameObject);
         }
     }
