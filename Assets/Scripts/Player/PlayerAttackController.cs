@@ -18,16 +18,16 @@ public class PlayerAttackController : MonoBehaviour
 
     public void Attack(GameObject attackingDice, DiceSide attackingDiceSide)
     {
-        DieType dieType = attackingDice.GetComponent<DieAttackProperties>().dieType;
-
-        switch (dieType)
+        DiceSide.Ability ability = attackingDiceSide.ability;
+        switch (ability)
         {
-            case DieType.SwordDie:
+            case DiceSide.Ability.None:
+                break;
+            case DiceSide.Ability.SwordSwipe:
                 SwordSwipe.Create(attackPrefabs[0], attackingDice, attackingDiceSide, swipeSound);
                 break;
-            case DieType.TeleportDie:
-                Teleport.ExecuteTeleport(attackingDice, attackingDiceSide);
-                GameObject.FindGameObjectWithTag("MusicManager").GetComponent<AudioSource>().PlayOneShot(warpSound, 0.5f);
+            case DiceSide.Ability.Teleport:
+                Teleport.ExecuteTeleport(attackingDice, attackingDiceSide, warpSound);
                 break;
             default:
                 throw new System.Exception("Unrecognized die type");
