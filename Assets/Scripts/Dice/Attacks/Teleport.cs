@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
-    public static void ExecuteTeleport(GameObject attackingDie, DiceSide attackingDiceSide)
+    public static void ExecuteTeleport(GameObject attackingDie, DiceSide attackingDiceSide, AudioClip teleportSound)
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         Vector3 playerInitialPos = player.transform.position;
         Vector3 attackingDieInitialPos = attackingDie.transform.position;
 
-        player.transform.position = new Vector3(
-            attackingDieInitialPos.x, attackingDieInitialPos.y, playerInitialPos.z);
-        attackingDie.transform.position = new Vector3(
-            playerInitialPos.x, playerInitialPos.y, attackingDieInitialPos.z);
+        player.transform.position = new Vector3(attackingDieInitialPos.x, attackingDieInitialPos.y, playerInitialPos.z);
+        attackingDie.transform.position = new Vector3(playerInitialPos.x, playerInitialPos.y, attackingDieInitialPos.z);
+
+        GameObject.FindGameObjectWithTag("MusicManager").GetComponent<AudioSource>().PlayOneShot(teleportSound, 0.5f);
     }
 }

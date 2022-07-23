@@ -64,6 +64,7 @@ MonoBehaviour:
   swipeScale: 1
   swipeTimeInSeconds: 0.3
   swipeDamage: 3
+  ability: 1
 --- !u!1 &444259735
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +129,7 @@ MonoBehaviour:
   swipeScale: 2
   swipeTimeInSeconds: 0.4
   swipeDamage: 3
+  ability: 1
 --- !u!1 &728005105
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,6 +194,7 @@ MonoBehaviour:
   swipeScale: 1
   swipeTimeInSeconds: 0.3
   swipeDamage: 2
+  ability: 1
 --- !u!1 &880551567
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,6 +259,7 @@ MonoBehaviour:
   swipeScale: 1
   swipeTimeInSeconds: 0.3
   swipeDamage: 2
+  ability: 1
 --- !u!1 &1107398328
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +324,7 @@ MonoBehaviour:
   swipeScale: 0.5
   swipeTimeInSeconds: 0.2
   swipeDamage: 1
+  ability: 1
 --- !u!1 &2024199154
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,6 +389,7 @@ MonoBehaviour:
   swipeScale: 1
   swipeTimeInSeconds: 0.3
   swipeDamage: 1
+  ability: 1
 --- !u!1 &55300294799590669
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +822,6 @@ GameObject:
   - component: {fileID: 193864118}
   - component: {fileID: 193864117}
   - component: {fileID: 1542041158644313747}
-  - component: {fileID: 8505973832676406941}
   m_Layer: 0
   m_Name: Attack Dice
   m_TagString: Dice
@@ -888,19 +893,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 0.9882353, g: 1, b: 0.7607843, a: 1}
---- !u!114 &8505973832676406941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4691256118945542106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 151679a838c633c478df1d46c7d1d6c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dieType: 0
 --- !u!1 &4900449501542660056
 GameObject:
   m_ObjectHideFlags: 0
