@@ -246,6 +246,7 @@ MonoBehaviour:
     m_Flags: 0
   mouseDragPhysicsSpeed: 3
   diceStopRollMaxVelocity: 0.05
+  dieResolveParticleSystem: {fileID: 1592980702195239905, guid: 58554c21eba8366438af7ebc4c13d084, type: 3}
 --- !u!1 &2160593792755143314
 GameObject:
   m_ObjectHideFlags: 0

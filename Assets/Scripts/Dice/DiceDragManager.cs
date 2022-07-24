@@ -19,6 +19,8 @@ public class DiceDragManager : MonoBehaviour {
     private int mouseDragPhysicsSpeed;
     [SerializeField]
     private float diceStopRollMaxVelocity;
+    [SerializeField]
+    private GameObject dieResolveParticleSystem;
 
     private static Vector3 UP = -Vector3.forward;
 
@@ -103,18 +105,26 @@ public class DiceDragManager : MonoBehaviour {
 
     private void tryResolveDiceRoll ()
     {
-        List<bool> toBeRemoved = new List<bool>();
         for(int i = diceThatAreResolving.Count-1; i >= 0; i--) {
             var dieThatIsResolving = diceThatAreResolving[i];
             Vector3 diceVelocity = dieThatIsResolving.GetComponent<Rigidbody>().velocity;
-            if (diceVelocity.magnitude < diceStopRollMaxVelocity) {
-                if (diceRollCompleted != null) {
-                    diceRollCompleted (dieThatIsResolving);
-                }
-                dieThatIsResolving.GetComponent<LineToDieController>().removeLine();
-                diceThatAreResolving.Remove(dieThatIsResolving);
+            if (diceVelocity.magnitude < diceStopRollMaxVelocity)
+            {
+                ResolveDie(dieThatIsResolving);
             }
         }
+    }
+
+    private void ResolveDie(GameObject dieThatIsResolving)
+    {
+        if (diceRollCompleted != null)
+        {
+            diceRollCompleted(dieThatIsResolving);
+        }
+        dieThatIsResolving.GetComponent<LineToDieController>().removeLine();
+        GameObject particles = Instantiate(dieResolveParticleSystem, dieThatIsResolving.transform.position, Quaternion.LookRotation(UP, Vector3.forward));
+        Destroy(particles, particles.GetComponent<ParticleSystem>().main.duration);
+        diceThatAreResolving.Remove(dieThatIsResolving);
     }
 
     private void tryDiceHover () {
