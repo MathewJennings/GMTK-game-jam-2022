@@ -23,13 +23,15 @@ public class DiceDragManager : MonoBehaviour {
     private static Vector3 UP = -Vector3.forward;
 
     private Camera mainCamera;
+    private GameObject player;
     private GameObject diceThatIsBeingHovered;
     private GameObject diceThatIsDragging;
     private List<GameObject> diceThatAreResolving;
-    private WaitForFixedUpdate waitforFixedUpdate = new WaitForFixedUpdate ();
+    private WaitForFixedUpdate waitforFixedUpdate = new WaitForFixedUpdate();
 
     private void Awake () {
         mainCamera = Camera.main;
+        player = GameObject.FindGameObjectWithTag("Player");
         diceThatAreResolving = new List<GameObject>();
     }
 
@@ -56,13 +58,12 @@ public class DiceDragManager : MonoBehaviour {
     // Returns the dice GameObject if one was hit, else null
     private GameObject rayCastHitADice () {
         Ray ray = mainCamera.ScreenPointToRay (Mouse.current.position.ReadValue ());
-        RaycastHit hit;
-        if (Physics.Raycast (ray, out hit)) {
-            if (hit.collider != null) {
+        if (Physics.Raycast(ray, out RaycastHit hit, 100, LayerMask.GetMask("Dice")))
+        {
+            if (hit.collider != null)
+            {
                 GameObject hitGameObject = hit.collider.gameObject;
-                if (hitGameObject.tag.Equals ("Dice")) {
-                    return hitGameObject;
-                }
+                return hitGameObject;
             }
         }
         return null;
@@ -86,9 +87,10 @@ public class DiceDragManager : MonoBehaviour {
             float dirX = Random.Range(0, 500);
             float dirY = Random.Range(0, 500);
             float dirZ = Random.Range(0, 500);
-            rigidbody.AddForce(UP * 500);
             rigidbody.AddTorque(dirX, dirY, dirZ);
+            rigidbody.AddForce(UP * 500);
             diceThatAreResolving.Add(diceThatIsDragging);
+            diceThatIsDragging.GetComponent<LineToDieController>().setUpLine(player.transform, diceThatIsDragging.transform);
             diceThatIsDragging = null;
             endHover();
         }
@@ -104,11 +106,12 @@ public class DiceDragManager : MonoBehaviour {
         List<bool> toBeRemoved = new List<bool>();
         for(int i = diceThatAreResolving.Count-1; i >= 0; i--) {
             var dieThatIsResolving = diceThatAreResolving[i];
-            Vector3 diceVelocity = dieThatIsResolving.GetComponent<Rigidbody> ().velocity;
+            Vector3 diceVelocity = dieThatIsResolving.GetComponent<Rigidbody>().velocity;
             if (diceVelocity.magnitude < diceStopRollMaxVelocity) {
                 if (diceRollCompleted != null) {
                     diceRollCompleted (dieThatIsResolving);
                 }
+                dieThatIsResolving.GetComponent<LineToDieController>().removeLine();
                 diceThatAreResolving.Remove(dieThatIsResolving);
             }
         }

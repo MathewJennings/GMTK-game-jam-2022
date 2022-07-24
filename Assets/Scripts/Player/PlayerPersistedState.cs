@@ -23,11 +23,6 @@ public class PlayerPersistedState : MonoBehaviour
 
     public Inventory getPlayerInventory()
     {
-        if (Instance == null)
-        {
-            Debug.Log("null playerinventory");
-        }
-
         if (Instance.playerInventory == null)
         {
             Instance.playerInventory = new Inventory();
@@ -37,10 +32,6 @@ public class PlayerPersistedState : MonoBehaviour
     }
     public Inventory getPlayerBackpack()
     {
-        if (Instance == null)
-        {
-            Debug.Log("null playerbackpack");
-        }
         if (Instance.playerBackpack == null)
         {
             Instance.playerBackpack = new Inventory();

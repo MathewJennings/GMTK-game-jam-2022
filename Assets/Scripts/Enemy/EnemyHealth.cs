@@ -49,7 +49,6 @@ public class EnemyHealth : MonoBehaviour
     }
     public void TakeDamage(Transform t, int damage)
     {
-        Debug.Log("damage");
         //todo set invuln timeout
         health -= damage;
         SetHealth(health);

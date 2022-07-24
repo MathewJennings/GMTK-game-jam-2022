@@ -97,7 +97,6 @@ public class SwordSwipe : MonoBehaviour
     private void KeepRotating()
     {
         timePercentage = 0;
-        Debug.Log(timePercentage);
         initialSwingRotation = new Quaternion(targetSwingRotation.x, targetSwingRotation.y, targetSwingRotation.z, targetSwingRotation.w);
         if (swipeAngleDegrees - intermediateDegreesRotated > INTERMEDIATE_ANGLES)
         {
