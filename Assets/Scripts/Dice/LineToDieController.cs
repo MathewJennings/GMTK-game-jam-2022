@@ -32,17 +32,17 @@ public class LineToDieController : MonoBehaviour
         {
             return;
         }
+        Vector3 direction = (endTransform.position - startTransform.position).normalized;
         Vector3 startPosition = startTransform.position;
-        float currentVelocity = gameObject.GetComponent<Rigidbody>().velocity.magnitude;
-        Vector3 endPosition = endTransform.position;
-        if (Physics.Linecast(startPosition, endTransform.position, out RaycastHit hit, LayerMask.GetMask("Dice")))
+        Vector3 endPosition = startPosition + direction*2;
+        if (Physics.Linecast(startPosition, endPosition, out RaycastHit hit, LayerMask.GetMask("Dice")))
         {
             endPosition = hit.point;
         }
         Vector3 startToEnd = endPosition - startPosition;
         Vector3 point0 = startPosition;
-        Vector3 point1 = startPosition + startToEnd*0.95f;
-        Vector3 point2 = startPosition + startToEnd * 0.951f;
+        Vector3 point1 = startPosition + startToEnd*0.90f;
+        Vector3 point2 = startPosition + startToEnd * 0.901f;
         Vector3 point3 = endPosition;
         lineRenderer.SetPosition(0, point0);
         lineRenderer.SetPosition(1, point1);
