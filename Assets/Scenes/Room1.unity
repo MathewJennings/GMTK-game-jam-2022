@@ -542,7 +542,7 @@ GameObject:
   - component: {fileID: 343656691}
   - component: {fileID: 343656692}
   m_Layer: 0
-  m_Name: click-hold
+  m_Name: click-pressed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -824,9 +824,33 @@ PrefabInstance:
       value: 37.2
       objectReference: {fileID: 0}
     - target: {fileID: 607860243439697200, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 607860243439697200, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 607860243439697200, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1406325417}
+    - target: {fileID: 607860243439697200, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 607860243439697200, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: restartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 607860243439697200, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 607860243439697200, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 883230603168442696, guid: 9b448cf57deb0604cb3792198e0f8c19, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -11799,7 +11823,7 @@ GameObject:
   - component: {fileID: 1912314459}
   - component: {fileID: 1912314460}
   m_Layer: 0
-  m_Name: click-release
+  m_Name: click-unpressed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11861,7 +11885,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7dabbbf769452e74e93b1231ac597846, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6cf9f4c6650d796499fec68040315484, type: 3}
   m_Color: {r: 0.9607843, g: 0.77254903, b: 0.6117647, a: 1}
   m_FlipX: 0
   m_FlipY: 0

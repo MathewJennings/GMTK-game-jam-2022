@@ -14,11 +14,13 @@ public class DragAndDropItem : MonoBehaviour,
     private RectTransform rectTransform;
     [SerializeField] private Canvas canvas;
     private CanvasGroup canvasGroup;
+    private CursorController cursorController;
     private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
         rectTransform = GetComponent<RectTransform>();
         initialRectTransformPosition = rectTransform.anchoredPosition;
+        cursorController = GameObject.FindObjectOfType<CursorController>();
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -26,6 +28,7 @@ public class DragAndDropItem : MonoBehaviour,
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1f;
         rectTransform.anchoredPosition = initialRectTransformPosition;
+        cursorController.ChangeCursorToArrow();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -33,6 +36,7 @@ public class DragAndDropItem : MonoBehaviour,
         canvasGroup.blocksRaycasts = false;
         canvasGroup.alpha = .6f;
         rectTransform.position += Vector3.back;
+        cursorController.ChangeCursorToClick();
     }
 
     public void OnDrag(PointerEventData eventData)
