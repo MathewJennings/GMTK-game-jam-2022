@@ -51,6 +51,7 @@ public class DiceDragManager : MonoBehaviour {
         GameObject hitDice = rayCastHitADice ();
         if (hitDice != null) {
             diceThatIsDragging = hitDice;
+            diceThatIsDragging.GetComponent<LineToDieController>().setUpLine(player.transform, diceThatIsDragging.transform);
             StartCoroutine (DragUpdate (hitDice));
         }
     }
@@ -90,7 +91,6 @@ public class DiceDragManager : MonoBehaviour {
             rigidbody.AddTorque(dirX, dirY, dirZ);
             rigidbody.AddForce(UP * 500);
             diceThatAreResolving.Add(diceThatIsDragging);
-            diceThatIsDragging.GetComponent<LineToDieController>().setUpLine(player.transform, diceThatIsDragging.transform);
             diceThatIsDragging = null;
             endHover();
         }
